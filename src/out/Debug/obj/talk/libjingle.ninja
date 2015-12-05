@@ -1,0 +1,4 @@
+build obj/talk/libjingle.actions_depends.stamp: stamp $
+    obj/webrtc/base/librtc_base.a $
+    obj/chromium/src/third_party/jsoncpp/libjsoncpp.a
+

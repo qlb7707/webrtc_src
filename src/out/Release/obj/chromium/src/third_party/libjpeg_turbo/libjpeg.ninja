@@ -1,0 +1,502 @@
+rule libjpeg_target_assemble_bec2b977d7eae3cabac0193feaddb3e5
+  command = cd ../../chromium/src/third_party/libjpeg_turbo; $
+      ../../../../out/Release/yasm -felf -D__x86__ -DELF -Ilinux/ $
+      -DRGBX_FILLER_0XFF -DSTRICT_MEMORY_ACCESS -Isimd/ -o $
+      "../../../../out/Release/gen/third_party/libjpeg_turbo/${root}.o" $
+      "${source}"
+  description = RULE Building ${root}.o
+  restat = 1
+
+build gen/third_party/libjpeg_turbo/jccolmmx.o: $
+    libjpeg_target_assemble_bec2b977d7eae3cabac0193feaddb3e5 $
+    ../../chromium/src/third_party/libjpeg_turbo/simd/jccolmmx.asm | yasm $
+    || yasm
+  source = simd/jccolmmx.asm
+  root = jccolmmx
+build gen/third_party/libjpeg_turbo/jccolss2.o: $
+    libjpeg_target_assemble_bec2b977d7eae3cabac0193feaddb3e5 $
+    ../../chromium/src/third_party/libjpeg_turbo/simd/jccolss2.asm | yasm $
+    || yasm
+  source = simd/jccolss2.asm
+  root = jccolss2
+build gen/third_party/libjpeg_turbo/jcgrammx.o: $
+    libjpeg_target_assemble_bec2b977d7eae3cabac0193feaddb3e5 $
+    ../../chromium/src/third_party/libjpeg_turbo/simd/jcgrammx.asm | yasm $
+    || yasm
+  source = simd/jcgrammx.asm
+  root = jcgrammx
+build gen/third_party/libjpeg_turbo/jcgrass2.o: $
+    libjpeg_target_assemble_bec2b977d7eae3cabac0193feaddb3e5 $
+    ../../chromium/src/third_party/libjpeg_turbo/simd/jcgrass2.asm | yasm $
+    || yasm
+  source = simd/jcgrass2.asm
+  root = jcgrass2
+build gen/third_party/libjpeg_turbo/jcqnt3dn.o: $
+    libjpeg_target_assemble_bec2b977d7eae3cabac0193feaddb3e5 $
+    ../../chromium/src/third_party/libjpeg_turbo/simd/jcqnt3dn.asm | yasm $
+    || yasm
+  source = simd/jcqnt3dn.asm
+  root = jcqnt3dn
+build gen/third_party/libjpeg_turbo/jcqntmmx.o: $
+    libjpeg_target_assemble_bec2b977d7eae3cabac0193feaddb3e5 $
+    ../../chromium/src/third_party/libjpeg_turbo/simd/jcqntmmx.asm | yasm $
+    || yasm
+  source = simd/jcqntmmx.asm
+  root = jcqntmmx
+build gen/third_party/libjpeg_turbo/jcqnts2f.o: $
+    libjpeg_target_assemble_bec2b977d7eae3cabac0193feaddb3e5 $
+    ../../chromium/src/third_party/libjpeg_turbo/simd/jcqnts2f.asm | yasm $
+    || yasm
+  source = simd/jcqnts2f.asm
+  root = jcqnts2f
+build gen/third_party/libjpeg_turbo/jcqnts2i.o: $
+    libjpeg_target_assemble_bec2b977d7eae3cabac0193feaddb3e5 $
+    ../../chromium/src/third_party/libjpeg_turbo/simd/jcqnts2i.asm | yasm $
+    || yasm
+  source = simd/jcqnts2i.asm
+  root = jcqnts2i
+build gen/third_party/libjpeg_turbo/jcqntsse.o: $
+    libjpeg_target_assemble_bec2b977d7eae3cabac0193feaddb3e5 $
+    ../../chromium/src/third_party/libjpeg_turbo/simd/jcqntsse.asm | yasm $
+    || yasm
+  source = simd/jcqntsse.asm
+  root = jcqntsse
+build gen/third_party/libjpeg_turbo/jcsammmx.o: $
+    libjpeg_target_assemble_bec2b977d7eae3cabac0193feaddb3e5 $
+    ../../chromium/src/third_party/libjpeg_turbo/simd/jcsammmx.asm | yasm $
+    || yasm
+  source = simd/jcsammmx.asm
+  root = jcsammmx
+build gen/third_party/libjpeg_turbo/jcsamss2.o: $
+    libjpeg_target_assemble_bec2b977d7eae3cabac0193feaddb3e5 $
+    ../../chromium/src/third_party/libjpeg_turbo/simd/jcsamss2.asm | yasm $
+    || yasm
+  source = simd/jcsamss2.asm
+  root = jcsamss2
+build gen/third_party/libjpeg_turbo/jdcolmmx.o: $
+    libjpeg_target_assemble_bec2b977d7eae3cabac0193feaddb3e5 $
+    ../../chromium/src/third_party/libjpeg_turbo/simd/jdcolmmx.asm | yasm $
+    || yasm
+  source = simd/jdcolmmx.asm
+  root = jdcolmmx
+build gen/third_party/libjpeg_turbo/jdcolss2.o: $
+    libjpeg_target_assemble_bec2b977d7eae3cabac0193feaddb3e5 $
+    ../../chromium/src/third_party/libjpeg_turbo/simd/jdcolss2.asm | yasm $
+    || yasm
+  source = simd/jdcolss2.asm
+  root = jdcolss2
+build gen/third_party/libjpeg_turbo/jdmermmx.o: $
+    libjpeg_target_assemble_bec2b977d7eae3cabac0193feaddb3e5 $
+    ../../chromium/src/third_party/libjpeg_turbo/simd/jdmermmx.asm | yasm $
+    || yasm
+  source = simd/jdmermmx.asm
+  root = jdmermmx
+build gen/third_party/libjpeg_turbo/jdmerss2.o: $
+    libjpeg_target_assemble_bec2b977d7eae3cabac0193feaddb3e5 $
+    ../../chromium/src/third_party/libjpeg_turbo/simd/jdmerss2.asm | yasm $
+    || yasm
+  source = simd/jdmerss2.asm
+  root = jdmerss2
+build gen/third_party/libjpeg_turbo/jdsammmx.o: $
+    libjpeg_target_assemble_bec2b977d7eae3cabac0193feaddb3e5 $
+    ../../chromium/src/third_party/libjpeg_turbo/simd/jdsammmx.asm | yasm $
+    || yasm
+  source = simd/jdsammmx.asm
+  root = jdsammmx
+build gen/third_party/libjpeg_turbo/jdsamss2.o: $
+    libjpeg_target_assemble_bec2b977d7eae3cabac0193feaddb3e5 $
+    ../../chromium/src/third_party/libjpeg_turbo/simd/jdsamss2.asm | yasm $
+    || yasm
+  source = simd/jdsamss2.asm
+  root = jdsamss2
+build gen/third_party/libjpeg_turbo/jf3dnflt.o: $
+    libjpeg_target_assemble_bec2b977d7eae3cabac0193feaddb3e5 $
+    ../../chromium/src/third_party/libjpeg_turbo/simd/jf3dnflt.asm | yasm $
+    || yasm
+  source = simd/jf3dnflt.asm
+  root = jf3dnflt
+build gen/third_party/libjpeg_turbo/jfmmxfst.o: $
+    libjpeg_target_assemble_bec2b977d7eae3cabac0193feaddb3e5 $
+    ../../chromium/src/third_party/libjpeg_turbo/simd/jfmmxfst.asm | yasm $
+    || yasm
+  source = simd/jfmmxfst.asm
+  root = jfmmxfst
+build gen/third_party/libjpeg_turbo/jfmmxint.o: $
+    libjpeg_target_assemble_bec2b977d7eae3cabac0193feaddb3e5 $
+    ../../chromium/src/third_party/libjpeg_turbo/simd/jfmmxint.asm | yasm $
+    || yasm
+  source = simd/jfmmxint.asm
+  root = jfmmxint
+build gen/third_party/libjpeg_turbo/jfss2fst.o: $
+    libjpeg_target_assemble_bec2b977d7eae3cabac0193feaddb3e5 $
+    ../../chromium/src/third_party/libjpeg_turbo/simd/jfss2fst.asm | yasm $
+    || yasm
+  source = simd/jfss2fst.asm
+  root = jfss2fst
+build gen/third_party/libjpeg_turbo/jfss2int.o: $
+    libjpeg_target_assemble_bec2b977d7eae3cabac0193feaddb3e5 $
+    ../../chromium/src/third_party/libjpeg_turbo/simd/jfss2int.asm | yasm $
+    || yasm
+  source = simd/jfss2int.asm
+  root = jfss2int
+build gen/third_party/libjpeg_turbo/jfsseflt.o: $
+    libjpeg_target_assemble_bec2b977d7eae3cabac0193feaddb3e5 $
+    ../../chromium/src/third_party/libjpeg_turbo/simd/jfsseflt.asm | yasm $
+    || yasm
+  source = simd/jfsseflt.asm
+  root = jfsseflt
+build gen/third_party/libjpeg_turbo/ji3dnflt.o: $
+    libjpeg_target_assemble_bec2b977d7eae3cabac0193feaddb3e5 $
+    ../../chromium/src/third_party/libjpeg_turbo/simd/ji3dnflt.asm | yasm $
+    || yasm
+  source = simd/ji3dnflt.asm
+  root = ji3dnflt
+build gen/third_party/libjpeg_turbo/jimmxfst.o: $
+    libjpeg_target_assemble_bec2b977d7eae3cabac0193feaddb3e5 $
+    ../../chromium/src/third_party/libjpeg_turbo/simd/jimmxfst.asm | yasm $
+    || yasm
+  source = simd/jimmxfst.asm
+  root = jimmxfst
+build gen/third_party/libjpeg_turbo/jimmxint.o: $
+    libjpeg_target_assemble_bec2b977d7eae3cabac0193feaddb3e5 $
+    ../../chromium/src/third_party/libjpeg_turbo/simd/jimmxint.asm | yasm $
+    || yasm
+  source = simd/jimmxint.asm
+  root = jimmxint
+build gen/third_party/libjpeg_turbo/jimmxred.o: $
+    libjpeg_target_assemble_bec2b977d7eae3cabac0193feaddb3e5 $
+    ../../chromium/src/third_party/libjpeg_turbo/simd/jimmxred.asm | yasm $
+    || yasm
+  source = simd/jimmxred.asm
+  root = jimmxred
+build gen/third_party/libjpeg_turbo/jiss2flt.o: $
+    libjpeg_target_assemble_bec2b977d7eae3cabac0193feaddb3e5 $
+    ../../chromium/src/third_party/libjpeg_turbo/simd/jiss2flt.asm | yasm $
+    || yasm
+  source = simd/jiss2flt.asm
+  root = jiss2flt
+build gen/third_party/libjpeg_turbo/jiss2fst.o: $
+    libjpeg_target_assemble_bec2b977d7eae3cabac0193feaddb3e5 $
+    ../../chromium/src/third_party/libjpeg_turbo/simd/jiss2fst.asm | yasm $
+    || yasm
+  source = simd/jiss2fst.asm
+  root = jiss2fst
+build gen/third_party/libjpeg_turbo/jiss2int.o: $
+    libjpeg_target_assemble_bec2b977d7eae3cabac0193feaddb3e5 $
+    ../../chromium/src/third_party/libjpeg_turbo/simd/jiss2int.asm | yasm $
+    || yasm
+  source = simd/jiss2int.asm
+  root = jiss2int
+build gen/third_party/libjpeg_turbo/jiss2red.o: $
+    libjpeg_target_assemble_bec2b977d7eae3cabac0193feaddb3e5 $
+    ../../chromium/src/third_party/libjpeg_turbo/simd/jiss2red.asm | yasm $
+    || yasm
+  source = simd/jiss2red.asm
+  root = jiss2red
+build gen/third_party/libjpeg_turbo/jisseflt.o: $
+    libjpeg_target_assemble_bec2b977d7eae3cabac0193feaddb3e5 $
+    ../../chromium/src/third_party/libjpeg_turbo/simd/jisseflt.asm | yasm $
+    || yasm
+  source = simd/jisseflt.asm
+  root = jisseflt
+build gen/third_party/libjpeg_turbo/jsimdcpu.o: $
+    libjpeg_target_assemble_bec2b977d7eae3cabac0193feaddb3e5 $
+    ../../chromium/src/third_party/libjpeg_turbo/simd/jsimdcpu.asm | yasm $
+    || yasm
+  source = simd/jsimdcpu.asm
+  root = jsimdcpu
+build $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.actions_rules_copies.stamp: $
+    stamp gen/third_party/libjpeg_turbo/jccolmmx.o $
+    gen/third_party/libjpeg_turbo/jccolss2.o $
+    gen/third_party/libjpeg_turbo/jcgrammx.o $
+    gen/third_party/libjpeg_turbo/jcgrass2.o $
+    gen/third_party/libjpeg_turbo/jcqnt3dn.o $
+    gen/third_party/libjpeg_turbo/jcqntmmx.o $
+    gen/third_party/libjpeg_turbo/jcqnts2f.o $
+    gen/third_party/libjpeg_turbo/jcqnts2i.o $
+    gen/third_party/libjpeg_turbo/jcqntsse.o $
+    gen/third_party/libjpeg_turbo/jcsammmx.o $
+    gen/third_party/libjpeg_turbo/jcsamss2.o $
+    gen/third_party/libjpeg_turbo/jdcolmmx.o $
+    gen/third_party/libjpeg_turbo/jdcolss2.o $
+    gen/third_party/libjpeg_turbo/jdmermmx.o $
+    gen/third_party/libjpeg_turbo/jdmerss2.o $
+    gen/third_party/libjpeg_turbo/jdsammmx.o $
+    gen/third_party/libjpeg_turbo/jdsamss2.o $
+    gen/third_party/libjpeg_turbo/jf3dnflt.o $
+    gen/third_party/libjpeg_turbo/jfmmxfst.o $
+    gen/third_party/libjpeg_turbo/jfmmxint.o $
+    gen/third_party/libjpeg_turbo/jfss2fst.o $
+    gen/third_party/libjpeg_turbo/jfss2int.o $
+    gen/third_party/libjpeg_turbo/jfsseflt.o $
+    gen/third_party/libjpeg_turbo/ji3dnflt.o $
+    gen/third_party/libjpeg_turbo/jimmxfst.o $
+    gen/third_party/libjpeg_turbo/jimmxint.o $
+    gen/third_party/libjpeg_turbo/jimmxred.o $
+    gen/third_party/libjpeg_turbo/jiss2flt.o $
+    gen/third_party/libjpeg_turbo/jiss2fst.o $
+    gen/third_party/libjpeg_turbo/jiss2int.o $
+    gen/third_party/libjpeg_turbo/jiss2red.o $
+    gen/third_party/libjpeg_turbo/jisseflt.o $
+    gen/third_party/libjpeg_turbo/jsimdcpu.o
+
+defines = -DV8_DEPRECATION_WARNINGS -D_FILE_OFFSET_BITS=64 -DCHROMIUM_BUILD $
+    -DCR_CLANG_REVISION=239765-1 -DUI_COMPOSITOR_IMAGE_TRANSPORT $
+    -DUSE_AURA=1 -DUSE_ASH=1 -DUSE_PANGO=1 -DUSE_CAIRO=1 $
+    -DUSE_DEFAULT_RENDER_THEME=1 -DUSE_LIBJPEG_TURBO=1 -DUSE_X11=1 $
+    -DUSE_CLIPBOARD_AURAX11=1 -DENABLE_ONE_CLICK_SIGNIN $
+    -DENABLE_PRE_SYNC_BACKUP -DENABLE_REMOTING=1 -DENABLE_WEBRTC=1 $
+    -DENABLE_MEDIA_ROUTER=1 -DENABLE_PEPPER_CDMS $
+    -DENABLE_CONFIGURATION_POLICY -DENABLE_NOTIFICATIONS -DENABLE_HIDPI=1 $
+    -DENABLE_TOPCHROME_MD=1 -DUSE_UDEV -DDONT_EMBED_BUILD_METADATA $
+    -DENABLE_TASK_MANAGER=1 -DENABLE_EXTENSIONS=1 -DENABLE_PLUGINS=1 $
+    -DENABLE_SESSION_SERVICE=1 -DENABLE_THEMES=1 -DENABLE_AUTOFILL_DIALOG=1 $
+    -DENABLE_BACKGROUND=1 -DENABLE_GOOGLE_NOW=1 -DCLD_VERSION=2 $
+    -DENABLE_PRINTING=1 -DENABLE_BASIC_PRINTING=1 -DENABLE_PRINT_PREVIEW=1 $
+    -DENABLE_SPELLCHECK=1 -DENABLE_CAPTIVE_PORTAL_DETECTION=1 $
+    -DENABLE_APP_LIST=1 -DENABLE_SETTINGS_APP=1 -DENABLE_SUPERVISED_USERS=1 $
+    -DENABLE_MDNS=1 -DENABLE_SERVICE_DISCOVERY=1 $
+    -DV8_USE_EXTERNAL_STARTUP_DATA -DFULL_SAFE_BROWSING -DSAFE_BROWSING_CSD $
+    -DSAFE_BROWSING_DB_LOCAL -DSAFE_BROWSING_SERVICE -DWITH_SIMD $
+    -DMOTION_JPEG_SUPPORTED -DNO_GETENV -DUSE_LIBPCI=1 -DUSE_GLIB=1 $
+    -DUSE_NSS_CERTS=1 -DNDEBUG -DNVALGRIND -DDYNAMIC_ANNOTATIONS_ENABLED=0
+includes = -Igen -I../../chromium/src/third_party/libjpeg_turbo
+cflags = -fstack-protector --param=ssp-buffer-size=4 -Werror -pthread $
+    -fno-strict-aliasing -Wno-unused-parameter $
+    -Wno-missing-field-initializers -fvisibility=hidden -pipe -fPIC $
+    -Wno-reserved-user-defined-literal -Xclang -load -Xclang $
+    /home/allan/webrtc_co/src/third_party/llvm-build/Release+Asserts/lib/libFindBadConstructs.so $
+    -Xclang -add-plugin -Xclang find-bad-constructs -Xclang $
+    -plugin-arg-find-bad-constructs -Xclang check-templates $
+    -momit-leaf-frame-pointer -mstack-alignment=16 -mstackrealign $
+    -fcolor-diagnostics $
+    -B/home/allan/webrtc_co/src/third_party/binutils/Linux_x64/Release/bin $
+    -Wheader-hygiene -Wno-char-subscripts $
+    -Wno-unneeded-internal-declaration -Wno-covered-switch-default $
+    -Wstring-conversion -Wno-c++11-narrowing -Wno-deprecated-register $
+    -Wno-inconsistent-missing-override -Wno-overloaded-virtual -Wno-format $
+    -Wno-unused-result -msse2 -mfpmath=sse -mmmx -m32 -O2 -fno-ident $
+    -fdata-sections -ffunction-sections -funwind-tables
+cflags_c = 
+cflags_cc = -fno-exceptions -fno-rtti -fno-threadsafe-statics $
+    -fvisibility-inlines-hidden -std=gnu++11 -Wno-deprecated
+arflags = 
+
+build obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jcapimin.o: cc $
+    ../../chromium/src/third_party/libjpeg_turbo/jcapimin.c || $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.actions_rules_copies.stamp
+build obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jcapistd.o: cc $
+    ../../chromium/src/third_party/libjpeg_turbo/jcapistd.c || $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.actions_rules_copies.stamp
+build obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jccoefct.o: cc $
+    ../../chromium/src/third_party/libjpeg_turbo/jccoefct.c || $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.actions_rules_copies.stamp
+build obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jccolor.o: cc $
+    ../../chromium/src/third_party/libjpeg_turbo/jccolor.c || $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.actions_rules_copies.stamp
+build obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jcdctmgr.o: cc $
+    ../../chromium/src/third_party/libjpeg_turbo/jcdctmgr.c || $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.actions_rules_copies.stamp
+build obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jchuff.o: cc $
+    ../../chromium/src/third_party/libjpeg_turbo/jchuff.c || $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.actions_rules_copies.stamp
+build obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jcinit.o: cc $
+    ../../chromium/src/third_party/libjpeg_turbo/jcinit.c || $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.actions_rules_copies.stamp
+build obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jcmainct.o: cc $
+    ../../chromium/src/third_party/libjpeg_turbo/jcmainct.c || $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.actions_rules_copies.stamp
+build obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jcmarker.o: cc $
+    ../../chromium/src/third_party/libjpeg_turbo/jcmarker.c || $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.actions_rules_copies.stamp
+build obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jcmaster.o: cc $
+    ../../chromium/src/third_party/libjpeg_turbo/jcmaster.c || $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.actions_rules_copies.stamp
+build obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jcomapi.o: cc $
+    ../../chromium/src/third_party/libjpeg_turbo/jcomapi.c || $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.actions_rules_copies.stamp
+build obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jcparam.o: cc $
+    ../../chromium/src/third_party/libjpeg_turbo/jcparam.c || $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.actions_rules_copies.stamp
+build obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jcphuff.o: cc $
+    ../../chromium/src/third_party/libjpeg_turbo/jcphuff.c || $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.actions_rules_copies.stamp
+build obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jcprepct.o: cc $
+    ../../chromium/src/third_party/libjpeg_turbo/jcprepct.c || $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.actions_rules_copies.stamp
+build obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jcsample.o: cc $
+    ../../chromium/src/third_party/libjpeg_turbo/jcsample.c || $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.actions_rules_copies.stamp
+build obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jdapimin.o: cc $
+    ../../chromium/src/third_party/libjpeg_turbo/jdapimin.c || $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.actions_rules_copies.stamp
+build obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jdapistd.o: cc $
+    ../../chromium/src/third_party/libjpeg_turbo/jdapistd.c || $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.actions_rules_copies.stamp
+build obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jdatadst.o: cc $
+    ../../chromium/src/third_party/libjpeg_turbo/jdatadst.c || $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.actions_rules_copies.stamp
+build obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jdatasrc.o: cc $
+    ../../chromium/src/third_party/libjpeg_turbo/jdatasrc.c || $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.actions_rules_copies.stamp
+build obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jdcoefct.o: cc $
+    ../../chromium/src/third_party/libjpeg_turbo/jdcoefct.c || $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.actions_rules_copies.stamp
+build obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jdcolor.o: cc $
+    ../../chromium/src/third_party/libjpeg_turbo/jdcolor.c || $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.actions_rules_copies.stamp
+build obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jddctmgr.o: cc $
+    ../../chromium/src/third_party/libjpeg_turbo/jddctmgr.c || $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.actions_rules_copies.stamp
+build obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jdhuff.o: cc $
+    ../../chromium/src/third_party/libjpeg_turbo/jdhuff.c || $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.actions_rules_copies.stamp
+build obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jdinput.o: cc $
+    ../../chromium/src/third_party/libjpeg_turbo/jdinput.c || $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.actions_rules_copies.stamp
+build obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jdmainct.o: cc $
+    ../../chromium/src/third_party/libjpeg_turbo/jdmainct.c || $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.actions_rules_copies.stamp
+build obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jdmarker.o: cc $
+    ../../chromium/src/third_party/libjpeg_turbo/jdmarker.c || $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.actions_rules_copies.stamp
+build obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jdmaster.o: cc $
+    ../../chromium/src/third_party/libjpeg_turbo/jdmaster.c || $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.actions_rules_copies.stamp
+build obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jdmerge.o: cc $
+    ../../chromium/src/third_party/libjpeg_turbo/jdmerge.c || $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.actions_rules_copies.stamp
+build obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jdphuff.o: cc $
+    ../../chromium/src/third_party/libjpeg_turbo/jdphuff.c || $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.actions_rules_copies.stamp
+build obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jdpostct.o: cc $
+    ../../chromium/src/third_party/libjpeg_turbo/jdpostct.c || $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.actions_rules_copies.stamp
+build obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jdsample.o: cc $
+    ../../chromium/src/third_party/libjpeg_turbo/jdsample.c || $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.actions_rules_copies.stamp
+build obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jerror.o: cc $
+    ../../chromium/src/third_party/libjpeg_turbo/jerror.c || $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.actions_rules_copies.stamp
+build obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jfdctflt.o: cc $
+    ../../chromium/src/third_party/libjpeg_turbo/jfdctflt.c || $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.actions_rules_copies.stamp
+build obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jfdctfst.o: cc $
+    ../../chromium/src/third_party/libjpeg_turbo/jfdctfst.c || $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.actions_rules_copies.stamp
+build obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jfdctint.o: cc $
+    ../../chromium/src/third_party/libjpeg_turbo/jfdctint.c || $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.actions_rules_copies.stamp
+build obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jidctflt.o: cc $
+    ../../chromium/src/third_party/libjpeg_turbo/jidctflt.c || $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.actions_rules_copies.stamp
+build obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jidctfst.o: cc $
+    ../../chromium/src/third_party/libjpeg_turbo/jidctfst.c || $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.actions_rules_copies.stamp
+build obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jidctint.o: cc $
+    ../../chromium/src/third_party/libjpeg_turbo/jidctint.c || $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.actions_rules_copies.stamp
+build obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jidctred.o: cc $
+    ../../chromium/src/third_party/libjpeg_turbo/jidctred.c || $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.actions_rules_copies.stamp
+build obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jmemmgr.o: cc $
+    ../../chromium/src/third_party/libjpeg_turbo/jmemmgr.c || $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.actions_rules_copies.stamp
+build obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jmemnobs.o: cc $
+    ../../chromium/src/third_party/libjpeg_turbo/jmemnobs.c || $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.actions_rules_copies.stamp
+build obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jquant1.o: cc $
+    ../../chromium/src/third_party/libjpeg_turbo/jquant1.c || $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.actions_rules_copies.stamp
+build obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jquant2.o: cc $
+    ../../chromium/src/third_party/libjpeg_turbo/jquant2.c || $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.actions_rules_copies.stamp
+build obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jutils.o: cc $
+    ../../chromium/src/third_party/libjpeg_turbo/jutils.c || $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.actions_rules_copies.stamp
+build obj/chromium/src/third_party/libjpeg_turbo/simd/libjpeg.jsimd_i386.o: $
+    cc ../../chromium/src/third_party/libjpeg_turbo/simd/jsimd_i386.c || $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.actions_rules_copies.stamp
+
+build obj/chromium/src/third_party/libjpeg_turbo/libjpeg_turbo.a: $
+    alink_thin $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jcapimin.o $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jcapistd.o $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jccoefct.o $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jccolor.o $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jcdctmgr.o $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jchuff.o $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jcinit.o $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jcmainct.o $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jcmarker.o $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jcmaster.o $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jcomapi.o $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jcparam.o $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jcphuff.o $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jcprepct.o $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jcsample.o $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jdapimin.o $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jdapistd.o $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jdatadst.o $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jdatasrc.o $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jdcoefct.o $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jdcolor.o $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jddctmgr.o $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jdhuff.o $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jdinput.o $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jdmainct.o $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jdmarker.o $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jdmaster.o $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jdmerge.o $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jdphuff.o $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jdpostct.o $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jdsample.o $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jerror.o $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jfdctflt.o $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jfdctfst.o $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jfdctint.o $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jidctflt.o $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jidctfst.o $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jidctint.o $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jidctred.o $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jmemmgr.o $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jmemnobs.o $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jquant1.o $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jquant2.o $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.jutils.o $
+    obj/chromium/src/third_party/libjpeg_turbo/simd/libjpeg.jsimd_i386.o $
+    gen/third_party/libjpeg_turbo/jccolmmx.o $
+    gen/third_party/libjpeg_turbo/jccolss2.o $
+    gen/third_party/libjpeg_turbo/jcgrammx.o $
+    gen/third_party/libjpeg_turbo/jcgrass2.o $
+    gen/third_party/libjpeg_turbo/jcqnt3dn.o $
+    gen/third_party/libjpeg_turbo/jcqntmmx.o $
+    gen/third_party/libjpeg_turbo/jcqnts2f.o $
+    gen/third_party/libjpeg_turbo/jcqnts2i.o $
+    gen/third_party/libjpeg_turbo/jcqntsse.o $
+    gen/third_party/libjpeg_turbo/jcsammmx.o $
+    gen/third_party/libjpeg_turbo/jcsamss2.o $
+    gen/third_party/libjpeg_turbo/jdcolmmx.o $
+    gen/third_party/libjpeg_turbo/jdcolss2.o $
+    gen/third_party/libjpeg_turbo/jdmermmx.o $
+    gen/third_party/libjpeg_turbo/jdmerss2.o $
+    gen/third_party/libjpeg_turbo/jdsammmx.o $
+    gen/third_party/libjpeg_turbo/jdsamss2.o $
+    gen/third_party/libjpeg_turbo/jf3dnflt.o $
+    gen/third_party/libjpeg_turbo/jfmmxfst.o $
+    gen/third_party/libjpeg_turbo/jfmmxint.o $
+    gen/third_party/libjpeg_turbo/jfss2fst.o $
+    gen/third_party/libjpeg_turbo/jfss2int.o $
+    gen/third_party/libjpeg_turbo/jfsseflt.o $
+    gen/third_party/libjpeg_turbo/ji3dnflt.o $
+    gen/third_party/libjpeg_turbo/jimmxfst.o $
+    gen/third_party/libjpeg_turbo/jimmxint.o $
+    gen/third_party/libjpeg_turbo/jimmxred.o $
+    gen/third_party/libjpeg_turbo/jiss2flt.o $
+    gen/third_party/libjpeg_turbo/jiss2fst.o $
+    gen/third_party/libjpeg_turbo/jiss2int.o $
+    gen/third_party/libjpeg_turbo/jiss2red.o $
+    gen/third_party/libjpeg_turbo/jisseflt.o $
+    gen/third_party/libjpeg_turbo/jsimdcpu.o || $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.actions_rules_copies.stamp

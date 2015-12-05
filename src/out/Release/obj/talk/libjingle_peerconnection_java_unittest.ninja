@@ -1,0 +1,19 @@
+rule $
+    libjingle_peerconnection_java_unittest_target_copy_libjingle_peerconnection_java_unittest_6635f810b722d4f54cbac9a4ce38e8dd
+  command = cd ../../talk; bash -c "rm -f $
+      ../out/Release/libjingle_peerconnection_java_unittest && sed -e $
+      \"s@GYP_JAVA_HOME@/usr/lib/jvm/java-7-openjdk-i386@\" < $
+      app/webrtc/javatests/libjingle_peerconnection_java_unittest.sh > $
+      ../out/Release/libjingle_peerconnection_java_unittest && cp $
+      ../third_party/junit-jar/junit-4.11.jar ../out/Release && chmod u+x $
+      ../out/Release/libjingle_peerconnection_java_unittest"
+  description = ACTION libjingle_peerconnection_java_unittest: copy $
+      libjingle_peerconnection_java_unittest_6635f810b722d4f54cbac9a4ce38e8dd
+  restat = 1
+
+build libjingle_peerconnection_java_unittest: $
+    libjingle_peerconnection_java_unittest_target_copy_libjingle_peerconnection_java_unittest_6635f810b722d4f54cbac9a4ce38e8dd $
+    ../../talk/app/webrtc/javatests/libjingle_peerconnection_java_unittest.sh $
+    libjingle_peerconnection_test_jar $
+    ../../third_party/junit-jar/junit-4.11.jar
+

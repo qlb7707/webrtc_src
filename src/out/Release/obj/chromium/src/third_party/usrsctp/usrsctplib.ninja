@@ -1,0 +1,148 @@
+defines = -DSCTP_PROCESS_LEVEL_LOCKS -DSCTP_SIMPLE_ALLOCATOR $
+    -D__Userspace__ -DV8_DEPRECATION_WARNINGS -D_FILE_OFFSET_BITS=64 $
+    -DSCTP_USE_NSS_SHA1 -DCHROMIUM_BUILD -DCR_CLANG_REVISION=239765-1 $
+    -DUI_COMPOSITOR_IMAGE_TRANSPORT -DUSE_AURA=1 -DUSE_ASH=1 -DUSE_PANGO=1 $
+    -DUSE_CAIRO=1 -DUSE_DEFAULT_RENDER_THEME=1 -DUSE_LIBJPEG_TURBO=1 $
+    -DUSE_X11=1 -DUSE_CLIPBOARD_AURAX11=1 -DENABLE_ONE_CLICK_SIGNIN $
+    -DENABLE_PRE_SYNC_BACKUP -DENABLE_REMOTING=1 -DENABLE_WEBRTC=1 $
+    -DENABLE_MEDIA_ROUTER=1 -DENABLE_PEPPER_CDMS $
+    -DENABLE_CONFIGURATION_POLICY -DENABLE_NOTIFICATIONS -DENABLE_HIDPI=1 $
+    -DENABLE_TOPCHROME_MD=1 -DUSE_UDEV -DDONT_EMBED_BUILD_METADATA $
+    -DENABLE_TASK_MANAGER=1 -DENABLE_EXTENSIONS=1 -DENABLE_PLUGINS=1 $
+    -DENABLE_SESSION_SERVICE=1 -DENABLE_THEMES=1 -DENABLE_AUTOFILL_DIALOG=1 $
+    -DENABLE_BACKGROUND=1 -DENABLE_GOOGLE_NOW=1 -DCLD_VERSION=2 $
+    -DENABLE_PRINTING=1 -DENABLE_BASIC_PRINTING=1 -DENABLE_PRINT_PREVIEW=1 $
+    -DENABLE_SPELLCHECK=1 -DENABLE_CAPTIVE_PORTAL_DETECTION=1 $
+    -DENABLE_APP_LIST=1 -DENABLE_SETTINGS_APP=1 -DENABLE_SUPERVISED_USERS=1 $
+    -DENABLE_MDNS=1 -DENABLE_SERVICE_DISCOVERY=1 $
+    -DV8_USE_EXTERNAL_STARTUP_DATA -DFULL_SAFE_BROWSING -DSAFE_BROWSING_CSD $
+    -DSAFE_BROWSING_DB_LOCAL -DSAFE_BROWSING_SERVICE -D__Userspace_os_Linux $
+    -DNON_WINDOWS_DEFINE -DUSE_LIBPCI=1 -DUSE_GLIB=1 -DUSE_NSS_CERTS=1 $
+    -DNDEBUG -DNVALGRIND -DDYNAMIC_ANNOTATIONS_ENABLED=0
+includes = -I../../chromium/src/third_party/usrsctp/usrsctplib $
+    -I../../chromium/src/third_party/usrsctp/usrsctplib/netinet -Igen $
+    -I../../net/third_party/nss/ssl
+cflags = -fstack-protector --param=ssp-buffer-size=4 -pthread $
+    -fno-strict-aliasing -Wno-unused-parameter $
+    -Wno-missing-field-initializers -fvisibility=hidden -pipe -fPIC $
+    -Wno-reserved-user-defined-literal -Xclang -load -Xclang $
+    /home/allan/webrtc_co/src/third_party/llvm-build/Release+Asserts/lib/libFindBadConstructs.so $
+    -Xclang -add-plugin -Xclang find-bad-constructs -Xclang $
+    -plugin-arg-find-bad-constructs -Xclang check-templates $
+    -momit-leaf-frame-pointer -mstack-alignment=16 -mstackrealign $
+    -fcolor-diagnostics $
+    -B/home/allan/webrtc_co/src/third_party/binutils/Linux_x64/Release/bin $
+    -Wheader-hygiene -Wno-char-subscripts $
+    -Wno-unneeded-internal-declaration -Wno-covered-switch-default $
+    -Wstring-conversion -Wno-c++11-narrowing -Wno-deprecated-register $
+    -Wno-inconsistent-missing-override -Wno-overloaded-virtual -w $
+    -I/usr/include/nss -I/usr/include/nspr -Wno-header-guard -Wno-format $
+    -Wno-unused-result -msse2 -mfpmath=sse -mmmx -m32 -O2 -fno-ident $
+    -fdata-sections -ffunction-sections -funwind-tables
+cflags_c = 
+cflags_cc = -fno-exceptions -fno-rtti -fno-threadsafe-statics $
+    -fvisibility-inlines-hidden -std=gnu++11 -Wno-deprecated
+arflags = 
+
+build $
+    obj/chromium/src/third_party/usrsctp/usrsctplib/netinet/usrsctplib.sctp_asconf.o: $
+    cc ../../chromium/src/third_party/usrsctp/usrsctplib/netinet/sctp_asconf.c
+build $
+    obj/chromium/src/third_party/usrsctp/usrsctplib/netinet/usrsctplib.sctp_auth.o: $
+    cc ../../chromium/src/third_party/usrsctp/usrsctplib/netinet/sctp_auth.c
+build $
+    obj/chromium/src/third_party/usrsctp/usrsctplib/netinet/usrsctplib.sctp_bsd_addr.o: $
+    cc $
+    ../../chromium/src/third_party/usrsctp/usrsctplib/netinet/sctp_bsd_addr.c
+build $
+    obj/chromium/src/third_party/usrsctp/usrsctplib/netinet/usrsctplib.sctp_callout.o: $
+    cc $
+    ../../chromium/src/third_party/usrsctp/usrsctplib/netinet/sctp_callout.c
+build $
+    obj/chromium/src/third_party/usrsctp/usrsctplib/netinet/usrsctplib.sctp_cc_functions.o: $
+    cc $
+    ../../chromium/src/third_party/usrsctp/usrsctplib/netinet/sctp_cc_functions.c
+build $
+    obj/chromium/src/third_party/usrsctp/usrsctplib/netinet/usrsctplib.sctp_crc32.o: $
+    cc ../../chromium/src/third_party/usrsctp/usrsctplib/netinet/sctp_crc32.c
+build $
+    obj/chromium/src/third_party/usrsctp/usrsctplib/netinet/usrsctplib.sctp_indata.o: $
+    cc ../../chromium/src/third_party/usrsctp/usrsctplib/netinet/sctp_indata.c
+build $
+    obj/chromium/src/third_party/usrsctp/usrsctplib/netinet/usrsctplib.sctp_input.o: $
+    cc ../../chromium/src/third_party/usrsctp/usrsctplib/netinet/sctp_input.c
+build $
+    obj/chromium/src/third_party/usrsctp/usrsctplib/netinet/usrsctplib.sctp_output.o: $
+    cc ../../chromium/src/third_party/usrsctp/usrsctplib/netinet/sctp_output.c
+build $
+    obj/chromium/src/third_party/usrsctp/usrsctplib/netinet/usrsctplib.sctp_pcb.o: $
+    cc ../../chromium/src/third_party/usrsctp/usrsctplib/netinet/sctp_pcb.c
+build $
+    obj/chromium/src/third_party/usrsctp/usrsctplib/netinet/usrsctplib.sctp_peeloff.o: $
+    cc $
+    ../../chromium/src/third_party/usrsctp/usrsctplib/netinet/sctp_peeloff.c
+build $
+    obj/chromium/src/third_party/usrsctp/usrsctplib/netinet/usrsctplib.sctp_sha1.o: $
+    cc ../../chromium/src/third_party/usrsctp/usrsctplib/netinet/sctp_sha1.c
+build $
+    obj/chromium/src/third_party/usrsctp/usrsctplib/netinet/usrsctplib.sctp_ss_functions.o: $
+    cc $
+    ../../chromium/src/third_party/usrsctp/usrsctplib/netinet/sctp_ss_functions.c
+build $
+    obj/chromium/src/third_party/usrsctp/usrsctplib/netinet/usrsctplib.sctp_sysctl.o: $
+    cc ../../chromium/src/third_party/usrsctp/usrsctplib/netinet/sctp_sysctl.c
+build $
+    obj/chromium/src/third_party/usrsctp/usrsctplib/netinet/usrsctplib.sctp_timer.o: $
+    cc ../../chromium/src/third_party/usrsctp/usrsctplib/netinet/sctp_timer.c
+build $
+    obj/chromium/src/third_party/usrsctp/usrsctplib/netinet/usrsctplib.sctp_userspace.o: $
+    cc $
+    ../../chromium/src/third_party/usrsctp/usrsctplib/netinet/sctp_userspace.c
+build $
+    obj/chromium/src/third_party/usrsctp/usrsctplib/netinet/usrsctplib.sctp_usrreq.o: $
+    cc ../../chromium/src/third_party/usrsctp/usrsctplib/netinet/sctp_usrreq.c
+build $
+    obj/chromium/src/third_party/usrsctp/usrsctplib/netinet/usrsctplib.sctputil.o: $
+    cc ../../chromium/src/third_party/usrsctp/usrsctplib/netinet/sctputil.c
+build $
+    obj/chromium/src/third_party/usrsctp/usrsctplib/netinet6/usrsctplib.sctp6_usrreq.o: $
+    cc $
+    ../../chromium/src/third_party/usrsctp/usrsctplib/netinet6/sctp6_usrreq.c
+build $
+    obj/chromium/src/third_party/usrsctp/usrsctplib/usrsctplib.user_environment.o: $
+    cc ../../chromium/src/third_party/usrsctp/usrsctplib/user_environment.c
+build $
+    obj/chromium/src/third_party/usrsctp/usrsctplib/usrsctplib.user_mbuf.o: $
+    cc ../../chromium/src/third_party/usrsctp/usrsctplib/user_mbuf.c
+build $
+    obj/chromium/src/third_party/usrsctp/usrsctplib/usrsctplib.user_recv_thread.o: $
+    cc ../../chromium/src/third_party/usrsctp/usrsctplib/user_recv_thread.c
+build $
+    obj/chromium/src/third_party/usrsctp/usrsctplib/usrsctplib.user_socket.o: $
+    cc ../../chromium/src/third_party/usrsctp/usrsctplib/user_socket.c
+
+build obj/chromium/src/third_party/usrsctp/libusrsctplib.a: alink_thin $
+    obj/chromium/src/third_party/usrsctp/usrsctplib/netinet/usrsctplib.sctp_asconf.o $
+    obj/chromium/src/third_party/usrsctp/usrsctplib/netinet/usrsctplib.sctp_auth.o $
+    obj/chromium/src/third_party/usrsctp/usrsctplib/netinet/usrsctplib.sctp_bsd_addr.o $
+    obj/chromium/src/third_party/usrsctp/usrsctplib/netinet/usrsctplib.sctp_callout.o $
+    obj/chromium/src/third_party/usrsctp/usrsctplib/netinet/usrsctplib.sctp_cc_functions.o $
+    obj/chromium/src/third_party/usrsctp/usrsctplib/netinet/usrsctplib.sctp_crc32.o $
+    obj/chromium/src/third_party/usrsctp/usrsctplib/netinet/usrsctplib.sctp_indata.o $
+    obj/chromium/src/third_party/usrsctp/usrsctplib/netinet/usrsctplib.sctp_input.o $
+    obj/chromium/src/third_party/usrsctp/usrsctplib/netinet/usrsctplib.sctp_output.o $
+    obj/chromium/src/third_party/usrsctp/usrsctplib/netinet/usrsctplib.sctp_pcb.o $
+    obj/chromium/src/third_party/usrsctp/usrsctplib/netinet/usrsctplib.sctp_peeloff.o $
+    obj/chromium/src/third_party/usrsctp/usrsctplib/netinet/usrsctplib.sctp_sha1.o $
+    obj/chromium/src/third_party/usrsctp/usrsctplib/netinet/usrsctplib.sctp_ss_functions.o $
+    obj/chromium/src/third_party/usrsctp/usrsctplib/netinet/usrsctplib.sctp_sysctl.o $
+    obj/chromium/src/third_party/usrsctp/usrsctplib/netinet/usrsctplib.sctp_timer.o $
+    obj/chromium/src/third_party/usrsctp/usrsctplib/netinet/usrsctplib.sctp_userspace.o $
+    obj/chromium/src/third_party/usrsctp/usrsctplib/netinet/usrsctplib.sctp_usrreq.o $
+    obj/chromium/src/third_party/usrsctp/usrsctplib/netinet/usrsctplib.sctputil.o $
+    obj/chromium/src/third_party/usrsctp/usrsctplib/netinet6/usrsctplib.sctp6_usrreq.o $
+    obj/chromium/src/third_party/usrsctp/usrsctplib/usrsctplib.user_environment.o $
+    obj/chromium/src/third_party/usrsctp/usrsctplib/usrsctplib.user_mbuf.o $
+    obj/chromium/src/third_party/usrsctp/usrsctplib/usrsctplib.user_recv_thread.o $
+    obj/chromium/src/third_party/usrsctp/usrsctplib/usrsctplib.user_socket.o $
+    || obj/chromium/src/net/third_party/nss/libcrssl.a

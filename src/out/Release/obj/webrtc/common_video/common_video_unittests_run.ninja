@@ -1,0 +1,64 @@
+rule $
+    common_video_unittests_run_target_isolate_57a337d9484b51bf26925769879eb560
+  command = cd ../../webrtc/common_video; python $
+      ../../tools/swarming_client/isolate.py check --result $
+      "../../out/Release/${root}.isolated" --isolate "${source}" $
+      --path-variable DEPTH ../.. --path-variable PRODUCT_DIR $
+      "../../out/Release " --config-variable "OS=linux" --config-variable $
+      "chromeos=0" --config-variable "component=static_library" $
+      --config-variable "internal_gles2_conform_tests=0" --config-variable $
+      "icu_use_data_file_flag=1" --config-variable "use_openssl=0"
+  description = RULE common_video_unittests_run: $
+      isolate_57a337d9484b51bf26925769879eb560 ${source}
+  restat = 1
+
+build common_video_unittests.isolated: $
+    common_video_unittests_run_target_isolate_57a337d9484b51bf26925769879eb560 $
+    ../../webrtc/common_video/common_video_unittests.isolate | $
+    ../../tools/swarming_client/isolate.py $
+    ../../tools/swarming_client/run_isolated.py || common_video_unittests
+  source = common_video_unittests.isolate
+  root = common_video_unittests
+defines = -DV8_DEPRECATION_WARNINGS -D_FILE_OFFSET_BITS=64 -DCHROMIUM_BUILD $
+    -DCR_CLANG_REVISION=239765-1 -DUI_COMPOSITOR_IMAGE_TRANSPORT $
+    -DUSE_AURA=1 -DUSE_ASH=1 -DUSE_PANGO=1 -DUSE_CAIRO=1 $
+    -DUSE_DEFAULT_RENDER_THEME=1 -DUSE_LIBJPEG_TURBO=1 -DUSE_X11=1 $
+    -DUSE_CLIPBOARD_AURAX11=1 -DENABLE_ONE_CLICK_SIGNIN $
+    -DENABLE_PRE_SYNC_BACKUP -DENABLE_REMOTING=1 -DENABLE_WEBRTC=1 $
+    -DENABLE_MEDIA_ROUTER=1 -DENABLE_PEPPER_CDMS $
+    -DENABLE_CONFIGURATION_POLICY -DENABLE_NOTIFICATIONS -DENABLE_HIDPI=1 $
+    -DENABLE_TOPCHROME_MD=1 -DUSE_UDEV -DDONT_EMBED_BUILD_METADATA $
+    -DENABLE_TASK_MANAGER=1 -DENABLE_EXTENSIONS=1 -DENABLE_PLUGINS=1 $
+    -DENABLE_SESSION_SERVICE=1 -DENABLE_THEMES=1 -DENABLE_AUTOFILL_DIALOG=1 $
+    -DENABLE_BACKGROUND=1 -DENABLE_GOOGLE_NOW=1 -DCLD_VERSION=2 $
+    -DENABLE_PRINTING=1 -DENABLE_BASIC_PRINTING=1 -DENABLE_PRINT_PREVIEW=1 $
+    -DENABLE_SPELLCHECK=1 -DENABLE_CAPTIVE_PORTAL_DETECTION=1 $
+    -DENABLE_APP_LIST=1 -DENABLE_SETTINGS_APP=1 -DENABLE_SUPERVISED_USERS=1 $
+    -DENABLE_MDNS=1 -DENABLE_SERVICE_DISCOVERY=1 $
+    -DV8_USE_EXTERNAL_STARTUP_DATA -DFULL_SAFE_BROWSING -DSAFE_BROWSING_CSD $
+    -DSAFE_BROWSING_DB_LOCAL -DSAFE_BROWSING_SERVICE -DEXPAT_RELATIVE_PATH $
+    -DWEBRTC_POSIX -DWEBRTC_LINUX -DWEBRTC_INCLUDE_INTERNAL_AUDIO_DEVICE $
+    -DGTEST_HAS_POSIX_RE=0 -DGTEST_LANG_CXX11=0 -DUSE_LIBPCI=1 -DUSE_GLIB=1 $
+    -DUSE_NSS_CERTS=1 -D__STDC_CONSTANT_MACROS -D__STDC_FORMAT_MACROS $
+    -DNDEBUG -DNVALGRIND -DDYNAMIC_ANNOTATIONS_ENABLED=0
+includes = -Igen -I../..
+cflags = -fstack-protector --param=ssp-buffer-size=4 -Werror -pthread $
+    -fno-strict-aliasing -Wall -Wno-unused-parameter $
+    -Wno-missing-field-initializers -fvisibility=hidden -pipe -fPIC $
+    -Wno-reserved-user-defined-literal -momit-leaf-frame-pointer $
+    -mstack-alignment=16 -mstackrealign -fcolor-diagnostics $
+    -B/home/allan/webrtc_co/src/third_party/binutils/Linux_x64/Release/bin $
+    -Wheader-hygiene -Wno-char-subscripts $
+    -Wno-unneeded-internal-declaration -Wno-covered-switch-default $
+    -Wstring-conversion -Wno-c++11-narrowing -Wno-deprecated-register $
+    -Wno-inconsistent-missing-override -Wextra -Wno-unused-parameter $
+    -Wno-missing-field-initializers -Wno-strict-overflow $
+    -Wimplicit-fallthrough -Wthread-safety -msse2 -mfpmath=sse -mmmx -m32 $
+    -O2 -fno-ident -fdata-sections -ffunction-sections -funwind-tables
+cflags_c = 
+cflags_cc = -fno-exceptions -fno-rtti -fno-threadsafe-statics $
+    -fvisibility-inlines-hidden -Wsign-compare -std=gnu++11 $
+    -Wnon-virtual-dtor -Woverloaded-virtual
+arflags = 
+
+

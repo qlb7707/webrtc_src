@@ -1,0 +1,1232 @@
+defines = -DV8_DEPRECATION_WARNINGS -D_FILE_OFFSET_BITS=64 -DCHROMIUM_BUILD $
+    -DCR_CLANG_REVISION=239765-1 -DUI_COMPOSITOR_IMAGE_TRANSPORT $
+    -DUSE_AURA=1 -DUSE_ASH=1 -DUSE_PANGO=1 -DUSE_CAIRO=1 $
+    -DUSE_DEFAULT_RENDER_THEME=1 -DUSE_LIBJPEG_TURBO=1 -DUSE_X11=1 $
+    -DUSE_CLIPBOARD_AURAX11=1 -DENABLE_ONE_CLICK_SIGNIN $
+    -DENABLE_PRE_SYNC_BACKUP -DENABLE_REMOTING=1 -DENABLE_WEBRTC=1 $
+    -DENABLE_MEDIA_ROUTER=1 -DENABLE_PEPPER_CDMS $
+    -DENABLE_CONFIGURATION_POLICY -DENABLE_NOTIFICATIONS -DENABLE_HIDPI=1 $
+    -DENABLE_TOPCHROME_MD=1 -DUSE_UDEV -DDONT_EMBED_BUILD_METADATA $
+    -DENABLE_TASK_MANAGER=1 -DENABLE_EXTENSIONS=1 -DENABLE_PLUGINS=1 $
+    -DENABLE_SESSION_SERVICE=1 -DENABLE_THEMES=1 -DENABLE_AUTOFILL_DIALOG=1 $
+    -DENABLE_BACKGROUND=1 -DENABLE_GOOGLE_NOW=1 -DCLD_VERSION=2 $
+    -DENABLE_PRINTING=1 -DENABLE_BASIC_PRINTING=1 -DENABLE_PRINT_PREVIEW=1 $
+    -DENABLE_SPELLCHECK=1 -DENABLE_CAPTIVE_PORTAL_DETECTION=1 $
+    -DENABLE_APP_LIST=1 -DENABLE_SETTINGS_APP=1 -DENABLE_SUPERVISED_USERS=1 $
+    -DENABLE_MDNS=1 -DENABLE_SERVICE_DISCOVERY=1 $
+    -DV8_USE_EXTERNAL_STARTUP_DATA -DFULL_SAFE_BROWSING -DSAFE_BROWSING_CSD $
+    -DSAFE_BROWSING_DB_LOCAL -DSAFE_BROWSING_SERVICE $
+    -DBORINGSSL_IMPLEMENTATION -DBORINGSSL_NO_STATIC_INITIALIZER $
+    -DUSE_LIBPCI=1 -DUSE_GLIB=1 -DUSE_NSS_CERTS=1 -DNDEBUG -DNVALGRIND $
+    -DDYNAMIC_ANNOTATIONS_ENABLED=0
+includes = -Igen -I../../chromium/src/third_party/boringssl/src/include $
+    -I../../chromium/src/third_party/boringssl/src/crypto
+cflags = -fstack-protector --param=ssp-buffer-size=4 -Werror -pthread $
+    -fno-strict-aliasing -Wno-unused-parameter $
+    -Wno-missing-field-initializers -fvisibility=hidden -pipe -fPIC $
+    -Wno-reserved-user-defined-literal -Xclang -load -Xclang $
+    /home/allan/webrtc_co/src/third_party/llvm-build/Release+Asserts/lib/libFindBadConstructs.so $
+    -Xclang -add-plugin -Xclang find-bad-constructs -Xclang $
+    -plugin-arg-find-bad-constructs -Xclang check-templates $
+    -momit-leaf-frame-pointer -mstack-alignment=16 -mstackrealign $
+    -fcolor-diagnostics $
+    -B/home/allan/webrtc_co/src/third_party/binutils/Linux_x64/Release/bin $
+    -Wheader-hygiene -Wno-char-subscripts $
+    -Wno-unneeded-internal-declaration -Wno-covered-switch-default $
+    -Wstring-conversion -Wno-c++11-narrowing -Wno-deprecated-register $
+    -Wno-inconsistent-missing-override -Wno-overloaded-virtual -Wno-format $
+    -Wno-unused-result -msse2 -mfpmath=sse -mmmx -m32 -O2 -fno-ident $
+    -fdata-sections -ffunction-sections -funwind-tables
+cflags_c = 
+cflags_cc = -fno-exceptions -fno-rtti -fno-threadsafe-statics $
+    -fvisibility-inlines-hidden -std=gnu++11 -Wno-deprecated
+arflags = 
+
+build obj/chromium/src/third_party/boringssl/boringssl.err_data.o: cc $
+    ../../chromium/src/third_party/boringssl/err_data.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/aes/boringssl.aes.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/aes/aes.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/aes/boringssl.mode_wrappers.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/aes/mode_wrappers.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.a_bitstr.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/asn1/a_bitstr.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.a_bool.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/asn1/a_bool.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.a_bytes.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/asn1/a_bytes.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.a_d2i_fp.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/asn1/a_d2i_fp.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.a_dup.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/asn1/a_dup.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.a_enum.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/asn1/a_enum.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.a_gentm.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/asn1/a_gentm.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.a_i2d_fp.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/asn1/a_i2d_fp.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.a_int.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/asn1/a_int.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.a_mbstr.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/asn1/a_mbstr.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.a_object.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/asn1/a_object.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.a_octet.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/asn1/a_octet.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.a_print.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/asn1/a_print.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.a_strnid.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/asn1/a_strnid.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.a_time.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/asn1/a_time.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.a_type.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/asn1/a_type.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.a_utctm.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/asn1/a_utctm.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.a_utf8.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/asn1/a_utf8.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.asn1_lib.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/asn1/asn1_lib.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.asn1_par.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/asn1/asn1_par.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.asn_pack.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/asn1/asn_pack.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.bio_asn1.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/asn1/bio_asn1.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.bio_ndef.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/asn1/bio_ndef.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.f_enum.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/asn1/f_enum.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.f_int.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/asn1/f_int.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.f_string.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/asn1/f_string.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.t_bitst.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/asn1/t_bitst.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.t_pkey.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/asn1/t_pkey.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.tasn_dec.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/asn1/tasn_dec.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.tasn_enc.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/asn1/tasn_enc.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.tasn_fre.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/asn1/tasn_fre.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.tasn_new.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/asn1/tasn_new.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.tasn_prn.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/asn1/tasn_prn.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.tasn_typ.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/asn1/tasn_typ.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.tasn_utl.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/asn1/tasn_utl.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.x_bignum.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/asn1/x_bignum.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.x_long.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/asn1/x_long.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/base64/boringssl.base64.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/base64/base64.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/bio/boringssl.bio.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/bio/bio.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/bio/boringssl.bio_mem.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/bio/bio_mem.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/bio/boringssl.buffer.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/bio/buffer.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/bio/boringssl.connect.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/bio/connect.c
+build obj/chromium/src/third_party/boringssl/src/crypto/bio/boringssl.fd.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/bio/fd.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/bio/boringssl.file.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/bio/file.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/bio/boringssl.hexdump.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/bio/hexdump.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/bio/boringssl.pair.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/bio/pair.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/bio/boringssl.printf.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/bio/printf.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/bio/boringssl.socket.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/bio/socket.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/bio/boringssl.socket_helper.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/bio/socket_helper.c
+build obj/chromium/src/third_party/boringssl/src/crypto/bn/boringssl.add.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/bn/add.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/bn/asm/boringssl.x86_64-gcc.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/bn/asm/x86_64-gcc.c
+build obj/chromium/src/third_party/boringssl/src/crypto/bn/boringssl.bn.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/bn/bn.c
+build obj/chromium/src/third_party/boringssl/src/crypto/bn/boringssl.cmp.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/bn/cmp.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/bn/boringssl.convert.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/bn/convert.c
+build obj/chromium/src/third_party/boringssl/src/crypto/bn/boringssl.ctx.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/bn/ctx.c
+build obj/chromium/src/third_party/boringssl/src/crypto/bn/boringssl.div.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/bn/div.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/bn/boringssl.exponentiation.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/bn/exponentiation.c
+build obj/chromium/src/third_party/boringssl/src/crypto/bn/boringssl.gcd.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/bn/gcd.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/bn/boringssl.generic.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/bn/generic.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/bn/boringssl.kronecker.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/bn/kronecker.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/bn/boringssl.montgomery.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/bn/montgomery.c
+build obj/chromium/src/third_party/boringssl/src/crypto/bn/boringssl.mul.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/bn/mul.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/bn/boringssl.prime.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/bn/prime.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/bn/boringssl.random.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/bn/random.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/bn/boringssl.rsaz_exp.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/bn/rsaz_exp.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/bn/boringssl.shift.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/bn/shift.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/bn/boringssl.sqrt.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/bn/sqrt.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/buf/boringssl.buf.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/buf/buf.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/bytestring/boringssl.ber.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/bytestring/ber.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/bytestring/boringssl.cbb.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/bytestring/cbb.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/bytestring/boringssl.cbs.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/bytestring/cbs.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/chacha/boringssl.chacha_generic.o: $
+    cc $
+    ../../chromium/src/third_party/boringssl/src/crypto/chacha/chacha_generic.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/chacha/boringssl.chacha_vec.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/chacha/chacha_vec.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/cipher/boringssl.aead.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/cipher/aead.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/cipher/boringssl.cipher.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/cipher/cipher.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/cipher/boringssl.derive_key.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/cipher/derive_key.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/cipher/boringssl.e_aes.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/cipher/e_aes.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/cipher/boringssl.e_chacha20poly1305.o: $
+    cc $
+    ../../chromium/src/third_party/boringssl/src/crypto/cipher/e_chacha20poly1305.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/cipher/boringssl.e_des.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/cipher/e_des.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/cipher/boringssl.e_null.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/cipher/e_null.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/cipher/boringssl.e_rc2.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/cipher/e_rc2.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/cipher/boringssl.e_rc4.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/cipher/e_rc4.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/cipher/boringssl.e_ssl3.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/cipher/e_ssl3.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/cipher/boringssl.e_tls.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/cipher/e_tls.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/cipher/boringssl.tls_cbc.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/cipher/tls_cbc.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/cmac/boringssl.cmac.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/cmac/cmac.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/conf/boringssl.conf.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/conf/conf.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/boringssl.cpu-arm.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/cpu-arm.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/boringssl.cpu-intel.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/cpu-intel.c
+build obj/chromium/src/third_party/boringssl/src/crypto/boringssl.crypto.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/crypto.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/des/boringssl.des.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/des/des.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/dh/boringssl.check.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/dh/check.c
+build obj/chromium/src/third_party/boringssl/src/crypto/dh/boringssl.dh.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/dh/dh.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/dh/boringssl.dh_asn1.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/dh/dh_asn1.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/dh/boringssl.dh_impl.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/dh/dh_impl.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/dh/boringssl.params.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/dh/params.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/digest/boringssl.digest.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/digest/digest.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/digest/boringssl.digests.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/digest/digests.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/boringssl.directory_posix.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/directory_posix.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/boringssl.directory_win.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/directory_win.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/dsa/boringssl.dsa.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/dsa/dsa.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/dsa/boringssl.dsa_asn1.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/dsa/dsa_asn1.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/dsa/boringssl.dsa_impl.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/dsa/dsa_impl.c
+build obj/chromium/src/third_party/boringssl/src/crypto/ec/boringssl.ec.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/ec/ec.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/ec/boringssl.ec_asn1.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/ec/ec_asn1.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/ec/boringssl.ec_key.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/ec/ec_key.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/ec/boringssl.ec_montgomery.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/ec/ec_montgomery.c
+build obj/chromium/src/third_party/boringssl/src/crypto/ec/boringssl.oct.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/ec/oct.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/ec/boringssl.p256-64.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/ec/p256-64.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/ec/boringssl.simple.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/ec/simple.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/ec/boringssl.util-64.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/ec/util-64.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/ec/boringssl.wnaf.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/ec/wnaf.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/ecdh/boringssl.ecdh.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/ecdh/ecdh.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/ecdsa/boringssl.ecdsa.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/ecdsa/ecdsa.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/ecdsa/boringssl.ecdsa_asn1.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/ecdsa/ecdsa_asn1.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/engine/boringssl.engine.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/engine/engine.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/err/boringssl.err.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/err/err.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/evp/boringssl.algorithm.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/evp/algorithm.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/evp/boringssl.asn1.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/evp/asn1.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/evp/boringssl.digestsign.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/evp/digestsign.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/evp/boringssl.evp.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/evp/evp.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/evp/boringssl.evp_ctx.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/evp/evp_ctx.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/evp/boringssl.p_dsa_asn1.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/evp/p_dsa_asn1.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/evp/boringssl.p_ec.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/evp/p_ec.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/evp/boringssl.p_ec_asn1.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/evp/p_ec_asn1.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/evp/boringssl.p_rsa.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/evp/p_rsa.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/evp/boringssl.p_rsa_asn1.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/evp/p_rsa_asn1.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/evp/boringssl.pbkdf.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/evp/pbkdf.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/evp/boringssl.sign.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/evp/sign.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/boringssl.ex_data.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/ex_data.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/hkdf/boringssl.hkdf.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/hkdf/hkdf.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/hmac/boringssl.hmac.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/hmac/hmac.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/lhash/boringssl.lhash.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/lhash/lhash.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/md4/boringssl.md4.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/md4/md4.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/md5/boringssl.md5.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/md5/md5.c
+build obj/chromium/src/third_party/boringssl/src/crypto/boringssl.mem.o: cc $
+    ../../chromium/src/third_party/boringssl/src/crypto/mem.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/modes/boringssl.cbc.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/modes/cbc.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/modes/boringssl.cfb.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/modes/cfb.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/modes/boringssl.ctr.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/modes/ctr.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/modes/boringssl.gcm.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/modes/gcm.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/modes/boringssl.ofb.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/modes/ofb.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/obj/boringssl.obj.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/obj/obj.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/obj/boringssl.obj_xref.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/obj/obj_xref.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/pem/boringssl.pem_all.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/pem/pem_all.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/pem/boringssl.pem_info.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/pem/pem_info.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/pem/boringssl.pem_lib.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/pem/pem_lib.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/pem/boringssl.pem_oth.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/pem/pem_oth.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/pem/boringssl.pem_pk8.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/pem/pem_pk8.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/pem/boringssl.pem_pkey.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/pem/pem_pkey.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/pem/boringssl.pem_x509.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/pem/pem_x509.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/pem/boringssl.pem_xaux.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/pem/pem_xaux.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/pkcs8/boringssl.p5_pbe.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/pkcs8/p5_pbe.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/pkcs8/boringssl.p5_pbev2.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/pkcs8/p5_pbev2.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/pkcs8/boringssl.p8_pkey.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/pkcs8/p8_pkey.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/pkcs8/boringssl.pkcs8.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/pkcs8/pkcs8.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/poly1305/boringssl.poly1305.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/poly1305/poly1305.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/poly1305/boringssl.poly1305_arm.o: $
+    cc $
+    ../../chromium/src/third_party/boringssl/src/crypto/poly1305/poly1305_arm.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/poly1305/boringssl.poly1305_vec.o: $
+    cc $
+    ../../chromium/src/third_party/boringssl/src/crypto/poly1305/poly1305_vec.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/rand/boringssl.hwrand.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/rand/hwrand.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/rand/boringssl.rand.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/rand/rand.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/rand/boringssl.urandom.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/rand/urandom.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/rand/boringssl.windows.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/rand/windows.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/rc4/boringssl.rc4.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/rc4/rc4.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/boringssl.refcount_c11.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/refcount_c11.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/boringssl.refcount_lock.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/refcount_lock.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/rsa/boringssl.blinding.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/rsa/blinding.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/rsa/boringssl.padding.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/rsa/padding.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/rsa/boringssl.rsa.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/rsa/rsa.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/rsa/boringssl.rsa_asn1.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/rsa/rsa_asn1.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/rsa/boringssl.rsa_impl.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/rsa/rsa_impl.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/sha/boringssl.sha1.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/sha/sha1.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/sha/boringssl.sha256.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/sha/sha256.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/sha/boringssl.sha512.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/sha/sha512.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/stack/boringssl.stack.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/stack/stack.c
+build obj/chromium/src/third_party/boringssl/src/crypto/boringssl.thread.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/thread.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/boringssl.thread_none.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/thread_none.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/boringssl.thread_pthread.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/thread_pthread.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/boringssl.thread_win.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/thread_win.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/boringssl.time_support.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/time_support.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.a_digest.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509/a_digest.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.a_sign.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509/a_sign.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.a_strex.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509/a_strex.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.a_verify.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509/a_verify.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.asn1_gen.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509/asn1_gen.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.by_dir.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509/by_dir.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.by_file.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509/by_file.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.i2d_pr.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509/i2d_pr.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.pkcs7.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509/pkcs7.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.t_crl.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509/t_crl.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.t_req.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509/t_req.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.t_x509.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509/t_x509.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.t_x509a.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509/t_x509a.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x509.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509/x509.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x509_att.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509/x509_att.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x509_cmp.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509/x509_cmp.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x509_d2.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509/x509_d2.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x509_def.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509/x509_def.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x509_ext.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509/x509_ext.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x509_lu.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509/x509_lu.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x509_obj.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509/x509_obj.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x509_r2x.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509/x509_r2x.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x509_req.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509/x509_req.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x509_set.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509/x509_set.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x509_trs.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509/x509_trs.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x509_txt.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509/x509_txt.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x509_v3.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509/x509_v3.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x509_vfy.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509/x509_vfy.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x509_vpm.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509/x509_vpm.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x509cset.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509/x509cset.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x509name.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509/x509name.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x509rset.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509/x509rset.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x509spki.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509/x509spki.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x509type.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509/x509type.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x_algor.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509/x_algor.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x_all.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509/x_all.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x_attrib.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509/x_attrib.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x_crl.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509/x_crl.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x_exten.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509/x_exten.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x_info.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509/x_info.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x_name.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509/x_name.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x_pkey.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509/x_pkey.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x_pubkey.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509/x_pubkey.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x_req.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509/x_req.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x_sig.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509/x_sig.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x_spki.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509/x_spki.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x_val.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509/x_val.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x_x509.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509/x_x509.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x_x509a.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509/x_x509a.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.pcy_cache.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509v3/pcy_cache.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.pcy_data.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509v3/pcy_data.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.pcy_lib.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509v3/pcy_lib.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.pcy_map.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509v3/pcy_map.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.pcy_node.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509v3/pcy_node.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.pcy_tree.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509v3/pcy_tree.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.v3_akey.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509v3/v3_akey.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.v3_akeya.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509v3/v3_akeya.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.v3_alt.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509v3/v3_alt.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.v3_bcons.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509v3/v3_bcons.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.v3_bitst.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509v3/v3_bitst.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.v3_conf.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509v3/v3_conf.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.v3_cpols.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509v3/v3_cpols.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.v3_crld.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509v3/v3_crld.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.v3_enum.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509v3/v3_enum.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.v3_extku.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509v3/v3_extku.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.v3_genn.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509v3/v3_genn.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.v3_ia5.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509v3/v3_ia5.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.v3_info.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509v3/v3_info.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.v3_int.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509v3/v3_int.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.v3_lib.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509v3/v3_lib.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.v3_ncons.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509v3/v3_ncons.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.v3_pci.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509v3/v3_pci.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.v3_pcia.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509v3/v3_pcia.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.v3_pcons.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509v3/v3_pcons.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.v3_pku.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509v3/v3_pku.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.v3_pmaps.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509v3/v3_pmaps.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.v3_prn.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509v3/v3_prn.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.v3_purp.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509v3/v3_purp.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.v3_skey.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509v3/v3_skey.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.v3_sxnet.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509v3/v3_sxnet.c
+build $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.v3_utl.o: $
+    cc ../../chromium/src/third_party/boringssl/src/crypto/x509v3/v3_utl.c
+build obj/chromium/src/third_party/boringssl/src/ssl/boringssl.d1_both.o: $
+    cc ../../chromium/src/third_party/boringssl/src/ssl/d1_both.c
+build obj/chromium/src/third_party/boringssl/src/ssl/boringssl.d1_clnt.o: $
+    cc ../../chromium/src/third_party/boringssl/src/ssl/d1_clnt.c
+build obj/chromium/src/third_party/boringssl/src/ssl/boringssl.d1_lib.o: cc $
+    ../../chromium/src/third_party/boringssl/src/ssl/d1_lib.c
+build obj/chromium/src/third_party/boringssl/src/ssl/boringssl.d1_meth.o: $
+    cc ../../chromium/src/third_party/boringssl/src/ssl/d1_meth.c
+build obj/chromium/src/third_party/boringssl/src/ssl/boringssl.d1_pkt.o: cc $
+    ../../chromium/src/third_party/boringssl/src/ssl/d1_pkt.c
+build obj/chromium/src/third_party/boringssl/src/ssl/boringssl.d1_srtp.o: $
+    cc ../../chromium/src/third_party/boringssl/src/ssl/d1_srtp.c
+build obj/chromium/src/third_party/boringssl/src/ssl/boringssl.d1_srvr.o: $
+    cc ../../chromium/src/third_party/boringssl/src/ssl/d1_srvr.c
+build $
+    obj/chromium/src/third_party/boringssl/src/ssl/pqueue/boringssl.pqueue.o: $
+    cc ../../chromium/src/third_party/boringssl/src/ssl/pqueue/pqueue.c
+build obj/chromium/src/third_party/boringssl/src/ssl/boringssl.s3_both.o: $
+    cc ../../chromium/src/third_party/boringssl/src/ssl/s3_both.c
+build obj/chromium/src/third_party/boringssl/src/ssl/boringssl.s3_clnt.o: $
+    cc ../../chromium/src/third_party/boringssl/src/ssl/s3_clnt.c
+build obj/chromium/src/third_party/boringssl/src/ssl/boringssl.s3_enc.o: cc $
+    ../../chromium/src/third_party/boringssl/src/ssl/s3_enc.c
+build obj/chromium/src/third_party/boringssl/src/ssl/boringssl.s3_lib.o: cc $
+    ../../chromium/src/third_party/boringssl/src/ssl/s3_lib.c
+build obj/chromium/src/third_party/boringssl/src/ssl/boringssl.s3_meth.o: $
+    cc ../../chromium/src/third_party/boringssl/src/ssl/s3_meth.c
+build obj/chromium/src/third_party/boringssl/src/ssl/boringssl.s3_pkt.o: cc $
+    ../../chromium/src/third_party/boringssl/src/ssl/s3_pkt.c
+build obj/chromium/src/third_party/boringssl/src/ssl/boringssl.s3_srvr.o: $
+    cc ../../chromium/src/third_party/boringssl/src/ssl/s3_srvr.c
+build $
+    obj/chromium/src/third_party/boringssl/src/ssl/boringssl.ssl_aead_ctx.o: $
+    cc ../../chromium/src/third_party/boringssl/src/ssl/ssl_aead_ctx.c
+build obj/chromium/src/third_party/boringssl/src/ssl/boringssl.ssl_algs.o: $
+    cc ../../chromium/src/third_party/boringssl/src/ssl/ssl_algs.c
+build obj/chromium/src/third_party/boringssl/src/ssl/boringssl.ssl_asn1.o: $
+    cc ../../chromium/src/third_party/boringssl/src/ssl/ssl_asn1.c
+build obj/chromium/src/third_party/boringssl/src/ssl/boringssl.ssl_cert.o: $
+    cc ../../chromium/src/third_party/boringssl/src/ssl/ssl_cert.c
+build $
+    obj/chromium/src/third_party/boringssl/src/ssl/boringssl.ssl_cipher.o: $
+    cc ../../chromium/src/third_party/boringssl/src/ssl/ssl_cipher.c
+build obj/chromium/src/third_party/boringssl/src/ssl/boringssl.ssl_lib.o: $
+    cc ../../chromium/src/third_party/boringssl/src/ssl/ssl_lib.c
+build obj/chromium/src/third_party/boringssl/src/ssl/boringssl.ssl_rsa.o: $
+    cc ../../chromium/src/third_party/boringssl/src/ssl/ssl_rsa.c
+build obj/chromium/src/third_party/boringssl/src/ssl/boringssl.ssl_sess.o: $
+    cc ../../chromium/src/third_party/boringssl/src/ssl/ssl_sess.c
+build obj/chromium/src/third_party/boringssl/src/ssl/boringssl.ssl_stat.o: $
+    cc ../../chromium/src/third_party/boringssl/src/ssl/ssl_stat.c
+build obj/chromium/src/third_party/boringssl/src/ssl/boringssl.ssl_txt.o: $
+    cc ../../chromium/src/third_party/boringssl/src/ssl/ssl_txt.c
+build obj/chromium/src/third_party/boringssl/src/ssl/boringssl.t1_enc.o: cc $
+    ../../chromium/src/third_party/boringssl/src/ssl/t1_enc.c
+build obj/chromium/src/third_party/boringssl/src/ssl/boringssl.t1_lib.o: cc $
+    ../../chromium/src/third_party/boringssl/src/ssl/t1_lib.c
+build obj/chromium/src/third_party/boringssl/src/ssl/boringssl.t1_reneg.o: $
+    cc ../../chromium/src/third_party/boringssl/src/ssl/t1_reneg.c
+build $
+    obj/chromium/src/third_party/boringssl/linux-x86/crypto/aes/boringssl.aes-586.o: $
+    cc ../../chromium/src/third_party/boringssl/linux-x86/crypto/aes/aes-586.S
+build $
+    obj/chromium/src/third_party/boringssl/linux-x86/crypto/aes/boringssl.aesni-x86.o: $
+    cc $
+    ../../chromium/src/third_party/boringssl/linux-x86/crypto/aes/aesni-x86.S
+build $
+    obj/chromium/src/third_party/boringssl/linux-x86/crypto/aes/boringssl.vpaes-x86.o: $
+    cc $
+    ../../chromium/src/third_party/boringssl/linux-x86/crypto/aes/vpaes-x86.S
+build $
+    obj/chromium/src/third_party/boringssl/linux-x86/crypto/bn/boringssl.bn-586.o: $
+    cc ../../chromium/src/third_party/boringssl/linux-x86/crypto/bn/bn-586.S
+build $
+    obj/chromium/src/third_party/boringssl/linux-x86/crypto/bn/boringssl.co-586.o: $
+    cc ../../chromium/src/third_party/boringssl/linux-x86/crypto/bn/co-586.S
+build $
+    obj/chromium/src/third_party/boringssl/linux-x86/crypto/bn/boringssl.x86-mont.o: $
+    cc ../../chromium/src/third_party/boringssl/linux-x86/crypto/bn/x86-mont.S
+build $
+    obj/chromium/src/third_party/boringssl/linux-x86/crypto/boringssl.cpu-x86-asm.o: $
+    cc ../../chromium/src/third_party/boringssl/linux-x86/crypto/cpu-x86-asm.S
+build $
+    obj/chromium/src/third_party/boringssl/linux-x86/crypto/md5/boringssl.md5-586.o: $
+    cc ../../chromium/src/third_party/boringssl/linux-x86/crypto/md5/md5-586.S
+build $
+    obj/chromium/src/third_party/boringssl/linux-x86/crypto/modes/boringssl.ghash-x86.o: $
+    cc $
+    ../../chromium/src/third_party/boringssl/linux-x86/crypto/modes/ghash-x86.S
+build $
+    obj/chromium/src/third_party/boringssl/linux-x86/crypto/rc4/boringssl.rc4-586.o: $
+    cc ../../chromium/src/third_party/boringssl/linux-x86/crypto/rc4/rc4-586.S
+build $
+    obj/chromium/src/third_party/boringssl/linux-x86/crypto/sha/boringssl.sha1-586.o: $
+    cc $
+    ../../chromium/src/third_party/boringssl/linux-x86/crypto/sha/sha1-586.S
+build $
+    obj/chromium/src/third_party/boringssl/linux-x86/crypto/sha/boringssl.sha256-586.o: $
+    cc $
+    ../../chromium/src/third_party/boringssl/linux-x86/crypto/sha/sha256-586.S
+build $
+    obj/chromium/src/third_party/boringssl/linux-x86/crypto/sha/boringssl.sha512-586.o: $
+    cc $
+    ../../chromium/src/third_party/boringssl/linux-x86/crypto/sha/sha512-586.S
+
+build obj/chromium/src/third_party/boringssl/libboringssl.a: alink_thin $
+    obj/chromium/src/third_party/boringssl/boringssl.err_data.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/aes/boringssl.aes.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/aes/boringssl.mode_wrappers.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.a_bitstr.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.a_bool.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.a_bytes.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.a_d2i_fp.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.a_dup.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.a_enum.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.a_gentm.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.a_i2d_fp.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.a_int.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.a_mbstr.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.a_object.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.a_octet.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.a_print.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.a_strnid.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.a_time.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.a_type.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.a_utctm.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.a_utf8.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.asn1_lib.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.asn1_par.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.asn_pack.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.bio_asn1.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.bio_ndef.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.f_enum.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.f_int.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.f_string.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.t_bitst.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.t_pkey.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.tasn_dec.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.tasn_enc.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.tasn_fre.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.tasn_new.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.tasn_prn.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.tasn_typ.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.tasn_utl.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.x_bignum.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/asn1/boringssl.x_long.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/base64/boringssl.base64.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/bio/boringssl.bio.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/bio/boringssl.bio_mem.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/bio/boringssl.buffer.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/bio/boringssl.connect.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/bio/boringssl.fd.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/bio/boringssl.file.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/bio/boringssl.hexdump.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/bio/boringssl.pair.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/bio/boringssl.printf.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/bio/boringssl.socket.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/bio/boringssl.socket_helper.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/bn/boringssl.add.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/bn/asm/boringssl.x86_64-gcc.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/bn/boringssl.bn.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/bn/boringssl.cmp.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/bn/boringssl.convert.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/bn/boringssl.ctx.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/bn/boringssl.div.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/bn/boringssl.exponentiation.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/bn/boringssl.gcd.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/bn/boringssl.generic.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/bn/boringssl.kronecker.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/bn/boringssl.montgomery.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/bn/boringssl.mul.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/bn/boringssl.prime.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/bn/boringssl.random.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/bn/boringssl.rsaz_exp.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/bn/boringssl.shift.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/bn/boringssl.sqrt.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/buf/boringssl.buf.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/bytestring/boringssl.ber.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/bytestring/boringssl.cbb.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/bytestring/boringssl.cbs.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/chacha/boringssl.chacha_generic.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/chacha/boringssl.chacha_vec.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/cipher/boringssl.aead.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/cipher/boringssl.cipher.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/cipher/boringssl.derive_key.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/cipher/boringssl.e_aes.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/cipher/boringssl.e_chacha20poly1305.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/cipher/boringssl.e_des.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/cipher/boringssl.e_null.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/cipher/boringssl.e_rc2.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/cipher/boringssl.e_rc4.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/cipher/boringssl.e_ssl3.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/cipher/boringssl.e_tls.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/cipher/boringssl.tls_cbc.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/cmac/boringssl.cmac.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/conf/boringssl.conf.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/boringssl.cpu-arm.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/boringssl.cpu-intel.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/boringssl.crypto.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/des/boringssl.des.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/dh/boringssl.check.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/dh/boringssl.dh.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/dh/boringssl.dh_asn1.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/dh/boringssl.dh_impl.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/dh/boringssl.params.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/digest/boringssl.digest.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/digest/boringssl.digests.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/boringssl.directory_posix.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/boringssl.directory_win.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/dsa/boringssl.dsa.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/dsa/boringssl.dsa_asn1.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/dsa/boringssl.dsa_impl.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/ec/boringssl.ec.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/ec/boringssl.ec_asn1.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/ec/boringssl.ec_key.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/ec/boringssl.ec_montgomery.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/ec/boringssl.oct.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/ec/boringssl.p256-64.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/ec/boringssl.simple.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/ec/boringssl.util-64.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/ec/boringssl.wnaf.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/ecdh/boringssl.ecdh.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/ecdsa/boringssl.ecdsa.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/ecdsa/boringssl.ecdsa_asn1.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/engine/boringssl.engine.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/err/boringssl.err.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/evp/boringssl.algorithm.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/evp/boringssl.asn1.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/evp/boringssl.digestsign.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/evp/boringssl.evp.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/evp/boringssl.evp_ctx.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/evp/boringssl.p_dsa_asn1.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/evp/boringssl.p_ec.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/evp/boringssl.p_ec_asn1.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/evp/boringssl.p_rsa.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/evp/boringssl.p_rsa_asn1.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/evp/boringssl.pbkdf.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/evp/boringssl.sign.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/boringssl.ex_data.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/hkdf/boringssl.hkdf.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/hmac/boringssl.hmac.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/lhash/boringssl.lhash.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/md4/boringssl.md4.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/md5/boringssl.md5.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/boringssl.mem.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/modes/boringssl.cbc.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/modes/boringssl.cfb.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/modes/boringssl.ctr.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/modes/boringssl.gcm.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/modes/boringssl.ofb.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/obj/boringssl.obj.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/obj/boringssl.obj_xref.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/pem/boringssl.pem_all.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/pem/boringssl.pem_info.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/pem/boringssl.pem_lib.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/pem/boringssl.pem_oth.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/pem/boringssl.pem_pk8.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/pem/boringssl.pem_pkey.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/pem/boringssl.pem_x509.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/pem/boringssl.pem_xaux.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/pkcs8/boringssl.p5_pbe.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/pkcs8/boringssl.p5_pbev2.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/pkcs8/boringssl.p8_pkey.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/pkcs8/boringssl.pkcs8.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/poly1305/boringssl.poly1305.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/poly1305/boringssl.poly1305_arm.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/poly1305/boringssl.poly1305_vec.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/rand/boringssl.hwrand.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/rand/boringssl.rand.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/rand/boringssl.urandom.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/rand/boringssl.windows.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/rc4/boringssl.rc4.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/boringssl.refcount_c11.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/boringssl.refcount_lock.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/rsa/boringssl.blinding.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/rsa/boringssl.padding.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/rsa/boringssl.rsa.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/rsa/boringssl.rsa_asn1.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/rsa/boringssl.rsa_impl.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/sha/boringssl.sha1.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/sha/boringssl.sha256.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/sha/boringssl.sha512.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/stack/boringssl.stack.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/boringssl.thread.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/boringssl.thread_none.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/boringssl.thread_pthread.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/boringssl.thread_win.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/boringssl.time_support.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.a_digest.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.a_sign.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.a_strex.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.a_verify.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.asn1_gen.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.by_dir.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.by_file.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.i2d_pr.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.pkcs7.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.t_crl.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.t_req.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.t_x509.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.t_x509a.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x509.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x509_att.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x509_cmp.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x509_d2.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x509_def.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x509_ext.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x509_lu.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x509_obj.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x509_r2x.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x509_req.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x509_set.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x509_trs.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x509_txt.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x509_v3.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x509_vfy.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x509_vpm.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x509cset.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x509name.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x509rset.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x509spki.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x509type.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x_algor.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x_all.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x_attrib.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x_crl.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x_exten.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x_info.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x_name.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x_pkey.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x_pubkey.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x_req.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x_sig.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x_spki.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x_val.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x_x509.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509/boringssl.x_x509a.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.pcy_cache.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.pcy_data.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.pcy_lib.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.pcy_map.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.pcy_node.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.pcy_tree.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.v3_akey.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.v3_akeya.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.v3_alt.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.v3_bcons.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.v3_bitst.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.v3_conf.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.v3_cpols.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.v3_crld.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.v3_enum.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.v3_extku.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.v3_genn.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.v3_ia5.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.v3_info.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.v3_int.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.v3_lib.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.v3_ncons.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.v3_pci.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.v3_pcia.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.v3_pcons.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.v3_pku.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.v3_pmaps.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.v3_prn.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.v3_purp.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.v3_skey.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.v3_sxnet.o $
+    obj/chromium/src/third_party/boringssl/src/crypto/x509v3/boringssl.v3_utl.o $
+    obj/chromium/src/third_party/boringssl/src/ssl/boringssl.d1_both.o $
+    obj/chromium/src/third_party/boringssl/src/ssl/boringssl.d1_clnt.o $
+    obj/chromium/src/third_party/boringssl/src/ssl/boringssl.d1_lib.o $
+    obj/chromium/src/third_party/boringssl/src/ssl/boringssl.d1_meth.o $
+    obj/chromium/src/third_party/boringssl/src/ssl/boringssl.d1_pkt.o $
+    obj/chromium/src/third_party/boringssl/src/ssl/boringssl.d1_srtp.o $
+    obj/chromium/src/third_party/boringssl/src/ssl/boringssl.d1_srvr.o $
+    obj/chromium/src/third_party/boringssl/src/ssl/pqueue/boringssl.pqueue.o $
+    obj/chromium/src/third_party/boringssl/src/ssl/boringssl.s3_both.o $
+    obj/chromium/src/third_party/boringssl/src/ssl/boringssl.s3_clnt.o $
+    obj/chromium/src/third_party/boringssl/src/ssl/boringssl.s3_enc.o $
+    obj/chromium/src/third_party/boringssl/src/ssl/boringssl.s3_lib.o $
+    obj/chromium/src/third_party/boringssl/src/ssl/boringssl.s3_meth.o $
+    obj/chromium/src/third_party/boringssl/src/ssl/boringssl.s3_pkt.o $
+    obj/chromium/src/third_party/boringssl/src/ssl/boringssl.s3_srvr.o $
+    obj/chromium/src/third_party/boringssl/src/ssl/boringssl.ssl_aead_ctx.o $
+    obj/chromium/src/third_party/boringssl/src/ssl/boringssl.ssl_algs.o $
+    obj/chromium/src/third_party/boringssl/src/ssl/boringssl.ssl_asn1.o $
+    obj/chromium/src/third_party/boringssl/src/ssl/boringssl.ssl_cert.o $
+    obj/chromium/src/third_party/boringssl/src/ssl/boringssl.ssl_cipher.o $
+    obj/chromium/src/third_party/boringssl/src/ssl/boringssl.ssl_lib.o $
+    obj/chromium/src/third_party/boringssl/src/ssl/boringssl.ssl_rsa.o $
+    obj/chromium/src/third_party/boringssl/src/ssl/boringssl.ssl_sess.o $
+    obj/chromium/src/third_party/boringssl/src/ssl/boringssl.ssl_stat.o $
+    obj/chromium/src/third_party/boringssl/src/ssl/boringssl.ssl_txt.o $
+    obj/chromium/src/third_party/boringssl/src/ssl/boringssl.t1_enc.o $
+    obj/chromium/src/third_party/boringssl/src/ssl/boringssl.t1_lib.o $
+    obj/chromium/src/third_party/boringssl/src/ssl/boringssl.t1_reneg.o $
+    obj/chromium/src/third_party/boringssl/linux-x86/crypto/aes/boringssl.aes-586.o $
+    obj/chromium/src/third_party/boringssl/linux-x86/crypto/aes/boringssl.aesni-x86.o $
+    obj/chromium/src/third_party/boringssl/linux-x86/crypto/aes/boringssl.vpaes-x86.o $
+    obj/chromium/src/third_party/boringssl/linux-x86/crypto/bn/boringssl.bn-586.o $
+    obj/chromium/src/third_party/boringssl/linux-x86/crypto/bn/boringssl.co-586.o $
+    obj/chromium/src/third_party/boringssl/linux-x86/crypto/bn/boringssl.x86-mont.o $
+    obj/chromium/src/third_party/boringssl/linux-x86/crypto/boringssl.cpu-x86-asm.o $
+    obj/chromium/src/third_party/boringssl/linux-x86/crypto/md5/boringssl.md5-586.o $
+    obj/chromium/src/third_party/boringssl/linux-x86/crypto/modes/boringssl.ghash-x86.o $
+    obj/chromium/src/third_party/boringssl/linux-x86/crypto/rc4/boringssl.rc4-586.o $
+    obj/chromium/src/third_party/boringssl/linux-x86/crypto/sha/boringssl.sha1-586.o $
+    obj/chromium/src/third_party/boringssl/linux-x86/crypto/sha/boringssl.sha256-586.o $
+    obj/chromium/src/third_party/boringssl/linux-x86/crypto/sha/boringssl.sha512-586.o

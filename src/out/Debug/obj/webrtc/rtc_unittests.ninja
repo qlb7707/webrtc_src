@@ -1,0 +1,403 @@
+build obj/webrtc/rtc_unittests.actions_depends.stamp: stamp $
+    obj/webrtc/base/librtc_base.a obj/webrtc/base/librtc_base_tests_utils.a $
+    obj/webrtc/libjingle/xmllite/librtc_xmllite.a $
+    obj/webrtc/libjingle/xmpp/librtc_xmpp.a obj/webrtc/p2p/librtc_p2p.a $
+    obj/webrtc/p2p/libstunprober.a obj/webrtc/sound/librtc_sound.a $
+    obj/chromium/src/testing/libgtest.a obj/chromium/src/testing/libgmock.a $
+    obj/webrtc/libwebrtc_common.a obj/webrtc/base/librtc_base_approved.a $
+    obj/chromium/src/third_party/jsoncpp/libjsoncpp.a $
+    obj/chromium/src/net/third_party/nss/libcrssl.a $
+    obj/chromium/src/net/third_party/nss/libcrssl.a
+
+defines = -DV8_DEPRECATION_WARNINGS -DEXPAT_RELATIVE_PATH -DWEBRTC_POSIX $
+    -DWEBRTC_LINUX -DWEBRTC_INCLUDE_INTERNAL_AUDIO_DEVICE $
+    -D_FILE_OFFSET_BITS=64 -DCHROMIUM_BUILD -DCR_CLANG_REVISION=239765-1 $
+    -DUI_COMPOSITOR_IMAGE_TRANSPORT -DUSE_AURA=1 -DUSE_ASH=1 -DUSE_PANGO=1 $
+    -DUSE_CAIRO=1 -DUSE_DEFAULT_RENDER_THEME=1 -DUSE_LIBJPEG_TURBO=1 $
+    -DUSE_X11=1 -DUSE_CLIPBOARD_AURAX11=1 -DENABLE_ONE_CLICK_SIGNIN $
+    -DENABLE_PRE_SYNC_BACKUP -DENABLE_REMOTING=1 -DENABLE_WEBRTC=1 $
+    -DENABLE_MEDIA_ROUTER=1 -DENABLE_PEPPER_CDMS $
+    -DENABLE_CONFIGURATION_POLICY -DENABLE_NOTIFICATIONS -DENABLE_HIDPI=1 $
+    -DENABLE_TOPCHROME_MD=1 -DUSE_UDEV -DDONT_EMBED_BUILD_METADATA $
+    -DENABLE_TASK_MANAGER=1 -DENABLE_EXTENSIONS=1 -DENABLE_PLUGINS=1 $
+    -DENABLE_SESSION_SERVICE=1 -DENABLE_THEMES=1 -DENABLE_AUTOFILL_DIALOG=1 $
+    -DENABLE_BACKGROUND=1 -DENABLE_GOOGLE_NOW=1 -DCLD_VERSION=2 $
+    -DENABLE_PRINTING=1 -DENABLE_BASIC_PRINTING=1 -DENABLE_PRINT_PREVIEW=1 $
+    -DENABLE_SPELLCHECK=1 -DENABLE_CAPTIVE_PORTAL_DETECTION=1 $
+    -DENABLE_APP_LIST=1 -DENABLE_SETTINGS_APP=1 -DENABLE_SUPERVISED_USERS=1 $
+    -DENABLE_MDNS=1 -DENABLE_SERVICE_DISCOVERY=1 $
+    -DV8_USE_EXTERNAL_STARTUP_DATA -DFULL_SAFE_BROWSING -DSAFE_BROWSING_CSD $
+    -DSAFE_BROWSING_DB_LOCAL -DSAFE_BROWSING_SERVICE -DGTEST_HAS_POSIX_RE=0 $
+    -DGTEST_LANG_CXX11=0 -DFEATURE_ENABLE_SSL -DSSL_USE_NSS $
+    -DHAVE_NSS_SSL_H -DSSL_USE_NSS_RNG -DGTEST_RELATIVE_PATH $
+    -DFEATURE_ENABLE_VOICEMAIL -DUNIT_TEST -DGTEST_HAS_RTTI=0 $
+    -DUSE_LIBPCI=1 -DUSE_GLIB=1 -DUSE_NSS_CERTS=1 -D__STDC_CONSTANT_MACROS $
+    -D__STDC_FORMAT_MACROS -DDYNAMIC_ANNOTATIONS_ENABLED=1 $
+    -DWTF_USE_DYNAMIC_ANNOTATIONS=1 -D_DEBUG
+includes = -Igen -I../.. -I../../chromium/src/testing/gtest/include $
+    -I../../chromium/src/testing/gmock/include
+cflags = -Wextra -Wno-unused-parameter -Wno-missing-field-initializers $
+    -Wno-strict-overflow -Wimplicit-fallthrough -Wthread-safety -Wextra $
+    -Wno-unused-parameter -Wno-missing-field-initializers $
+    -Wno-strict-overflow -Wimplicit-fallthrough -Wthread-safety -Wextra $
+    -Wno-unused-parameter -Wno-missing-field-initializers $
+    -Wno-strict-overflow -Wimplicit-fallthrough -Wthread-safety -Wextra $
+    -Wno-unused-parameter -Wno-missing-field-initializers $
+    -Wno-strict-overflow -Wimplicit-fallthrough -Wthread-safety $
+    -fstack-protector --param=ssp-buffer-size=4 -Werror -pthread $
+    -fno-strict-aliasing -Wall -Wno-unused-parameter $
+    -Wno-missing-field-initializers -fvisibility=hidden -pipe -fPIC $
+    -Wno-reserved-user-defined-literal -momit-leaf-frame-pointer $
+    -mstack-alignment=16 -mstackrealign -fcolor-diagnostics $
+    -B/home/allan/webrtc_co/src/third_party/binutils/Linux_x64/Release/bin $
+    -Wheader-hygiene -Wno-char-subscripts $
+    -Wno-unneeded-internal-declaration -Wno-covered-switch-default $
+    -Wstring-conversion -Wno-c++11-narrowing -Wno-deprecated-register $
+    -Wno-inconsistent-missing-override -Wextra -Wno-unused-parameter $
+    -Wno-missing-field-initializers -Wno-strict-overflow $
+    -Wimplicit-fallthrough -Wthread-safety -msse2 -mfpmath=sse -mmmx -m32 $
+    -O0 -g -funwind-tables -Wno-undefined-bool-conversion $
+    -Wno-tautological-undefined-compare
+cflags_c = 
+cflags_cc = -Woverloaded-virtual -Woverloaded-virtual -Woverloaded-virtual $
+    -Woverloaded-virtual -fno-exceptions -fno-rtti -fno-threadsafe-statics $
+    -fvisibility-inlines-hidden -Wsign-compare -std=gnu++11 $
+    -Woverloaded-virtual
+arflags = 
+
+build obj/webrtc/base/rtc_unittests.asynchttprequest_unittest.o: cxx $
+    ../../webrtc/base/asynchttprequest_unittest.cc
+build obj/webrtc/base/rtc_unittests.atomicops_unittest.o: cxx $
+    ../../webrtc/base/atomicops_unittest.cc
+build obj/webrtc/base/rtc_unittests.autodetectproxy_unittest.o: cxx $
+    ../../webrtc/base/autodetectproxy_unittest.cc
+build obj/webrtc/base/rtc_unittests.bandwidthsmoother_unittest.o: cxx $
+    ../../webrtc/base/bandwidthsmoother_unittest.cc
+build obj/webrtc/base/rtc_unittests.base64_unittest.o: cxx $
+    ../../webrtc/base/base64_unittest.cc
+build obj/webrtc/base/rtc_unittests.basictypes_unittest.o: cxx $
+    ../../webrtc/base/basictypes_unittest.cc
+build obj/webrtc/base/rtc_unittests.bind_unittest.o: cxx $
+    ../../webrtc/base/bind_unittest.cc
+build obj/webrtc/base/rtc_unittests.bitbuffer_unittest.o: cxx $
+    ../../webrtc/base/bitbuffer_unittest.cc
+build obj/webrtc/base/rtc_unittests.buffer_unittest.o: cxx $
+    ../../webrtc/base/buffer_unittest.cc
+build obj/webrtc/base/rtc_unittests.bufferqueue_unittest.o: cxx $
+    ../../webrtc/base/bufferqueue_unittest.cc
+build obj/webrtc/base/rtc_unittests.bytebuffer_unittest.o: cxx $
+    ../../webrtc/base/bytebuffer_unittest.cc
+build obj/webrtc/base/rtc_unittests.byteorder_unittest.o: cxx $
+    ../../webrtc/base/byteorder_unittest.cc
+build obj/webrtc/base/rtc_unittests.callback_unittest.o: cxx $
+    ../../webrtc/base/callback_unittest.cc
+build obj/webrtc/base/rtc_unittests.cpumonitor_unittest.o: cxx $
+    ../../webrtc/base/cpumonitor_unittest.cc
+build obj/webrtc/base/rtc_unittests.crc32_unittest.o: cxx $
+    ../../webrtc/base/crc32_unittest.cc
+build obj/webrtc/base/rtc_unittests.criticalsection_unittest.o: cxx $
+    ../../webrtc/base/criticalsection_unittest.cc
+build obj/webrtc/base/rtc_unittests.event_tracer_unittest.o: cxx $
+    ../../webrtc/base/event_tracer_unittest.cc
+build obj/webrtc/base/rtc_unittests.event_unittest.o: cxx $
+    ../../webrtc/base/event_unittest.cc
+build obj/webrtc/base/rtc_unittests.exp_filter_unittest.o: cxx $
+    ../../webrtc/base/exp_filter_unittest.cc
+build obj/webrtc/base/rtc_unittests.filerotatingstream_unittest.o: cxx $
+    ../../webrtc/base/filerotatingstream_unittest.cc
+build obj/webrtc/base/rtc_unittests.fileutils_unittest.o: cxx $
+    ../../webrtc/base/fileutils_unittest.cc
+build obj/webrtc/base/rtc_unittests.helpers_unittest.o: cxx $
+    ../../webrtc/base/helpers_unittest.cc
+build obj/webrtc/base/rtc_unittests.httpbase_unittest.o: cxx $
+    ../../webrtc/base/httpbase_unittest.cc
+build obj/webrtc/base/rtc_unittests.httpcommon_unittest.o: cxx $
+    ../../webrtc/base/httpcommon_unittest.cc
+build obj/webrtc/base/rtc_unittests.httpserver_unittest.o: cxx $
+    ../../webrtc/base/httpserver_unittest.cc
+build obj/webrtc/base/rtc_unittests.ipaddress_unittest.o: cxx $
+    ../../webrtc/base/ipaddress_unittest.cc
+build obj/webrtc/base/rtc_unittests.logging_unittest.o: cxx $
+    ../../webrtc/base/logging_unittest.cc
+build obj/webrtc/base/rtc_unittests.md5digest_unittest.o: cxx $
+    ../../webrtc/base/md5digest_unittest.cc
+build obj/webrtc/base/rtc_unittests.messagedigest_unittest.o: cxx $
+    ../../webrtc/base/messagedigest_unittest.cc
+build obj/webrtc/base/rtc_unittests.messagequeue_unittest.o: cxx $
+    ../../webrtc/base/messagequeue_unittest.cc
+build obj/webrtc/base/rtc_unittests.multipart_unittest.o: cxx $
+    ../../webrtc/base/multipart_unittest.cc
+build obj/webrtc/base/rtc_unittests.nat_unittest.o: cxx $
+    ../../webrtc/base/nat_unittest.cc
+build obj/webrtc/base/rtc_unittests.network_unittest.o: cxx $
+    ../../webrtc/base/network_unittest.cc
+build obj/webrtc/base/rtc_unittests.nullsocketserver_unittest.o: cxx $
+    ../../webrtc/base/nullsocketserver_unittest.cc
+build obj/webrtc/base/rtc_unittests.optionsfile_unittest.o: cxx $
+    ../../webrtc/base/optionsfile_unittest.cc
+build obj/webrtc/base/rtc_unittests.pathutils_unittest.o: cxx $
+    ../../webrtc/base/pathutils_unittest.cc
+build obj/webrtc/base/rtc_unittests.physicalsocketserver_unittest.o: cxx $
+    ../../webrtc/base/physicalsocketserver_unittest.cc
+build obj/webrtc/base/rtc_unittests.profiler_unittest.o: cxx $
+    ../../webrtc/base/profiler_unittest.cc
+build obj/webrtc/base/rtc_unittests.proxy_unittest.o: cxx $
+    ../../webrtc/base/proxy_unittest.cc
+build obj/webrtc/base/rtc_unittests.proxydetect_unittest.o: cxx $
+    ../../webrtc/base/proxydetect_unittest.cc
+build obj/webrtc/base/rtc_unittests.ratelimiter_unittest.o: cxx $
+    ../../webrtc/base/ratelimiter_unittest.cc
+build obj/webrtc/base/rtc_unittests.ratetracker_unittest.o: cxx $
+    ../../webrtc/base/ratetracker_unittest.cc
+build $
+    obj/webrtc/base/rtc_unittests.referencecountedsingletonfactory_unittest.o: $
+    cxx ../../webrtc/base/referencecountedsingletonfactory_unittest.cc
+build obj/webrtc/base/rtc_unittests.rollingaccumulator_unittest.o: cxx $
+    ../../webrtc/base/rollingaccumulator_unittest.cc
+build obj/webrtc/base/rtc_unittests.scopedptrcollection_unittest.o: cxx $
+    ../../webrtc/base/scopedptrcollection_unittest.cc
+build obj/webrtc/base/rtc_unittests.sha1digest_unittest.o: cxx $
+    ../../webrtc/base/sha1digest_unittest.cc
+build obj/webrtc/base/rtc_unittests.sharedexclusivelock_unittest.o: cxx $
+    ../../webrtc/base/sharedexclusivelock_unittest.cc
+build obj/webrtc/base/rtc_unittests.signalthread_unittest.o: cxx $
+    ../../webrtc/base/signalthread_unittest.cc
+build obj/webrtc/base/rtc_unittests.sigslot_unittest.o: cxx $
+    ../../webrtc/base/sigslot_unittest.cc
+build obj/webrtc/base/rtc_unittests.socket_unittest.o: cxx $
+    ../../webrtc/base/socket_unittest.cc
+build obj/webrtc/base/rtc_unittests.socketaddress_unittest.o: cxx $
+    ../../webrtc/base/socketaddress_unittest.cc
+build obj/webrtc/base/rtc_unittests.stream_unittest.o: cxx $
+    ../../webrtc/base/stream_unittest.cc
+build obj/webrtc/base/rtc_unittests.stringencode_unittest.o: cxx $
+    ../../webrtc/base/stringencode_unittest.cc
+build obj/webrtc/base/rtc_unittests.stringutils_unittest.o: cxx $
+    ../../webrtc/base/stringutils_unittest.cc
+build obj/webrtc/base/rtc_unittests.task_unittest.o: cxx $
+    ../../webrtc/base/task_unittest.cc
+build obj/webrtc/base/rtc_unittests.testclient_unittest.o: cxx $
+    ../../webrtc/base/testclient_unittest.cc
+build obj/webrtc/base/rtc_unittests.thread_checker_unittest.o: cxx $
+    ../../webrtc/base/thread_checker_unittest.cc
+build obj/webrtc/base/rtc_unittests.thread_unittest.o: cxx $
+    ../../webrtc/base/thread_unittest.cc
+build obj/webrtc/base/rtc_unittests.timeutils_unittest.o: cxx $
+    ../../webrtc/base/timeutils_unittest.cc
+build obj/webrtc/base/rtc_unittests.urlencode_unittest.o: cxx $
+    ../../webrtc/base/urlencode_unittest.cc
+build obj/webrtc/base/rtc_unittests.versionparsing_unittest.o: cxx $
+    ../../webrtc/base/versionparsing_unittest.cc
+build obj/webrtc/base/rtc_unittests.virtualsocket_unittest.o: cxx $
+    ../../webrtc/base/virtualsocket_unittest.cc
+build obj/webrtc/base/rtc_unittests.latebindingsymboltable_unittest.o: cxx $
+    ../../webrtc/base/latebindingsymboltable_unittest.cc
+build obj/webrtc/base/rtc_unittests.linuxfdwalk_unittest.o: cxx $
+    ../../webrtc/base/linuxfdwalk_unittest.cc
+build obj/webrtc/base/rtc_unittests.ssladapter_unittest.o: cxx $
+    ../../webrtc/base/ssladapter_unittest.cc
+build obj/webrtc/base/rtc_unittests.sslidentity_unittest.o: cxx $
+    ../../webrtc/base/sslidentity_unittest.cc
+build obj/webrtc/base/rtc_unittests.sslstreamadapter_unittest.o: cxx $
+    ../../webrtc/base/sslstreamadapter_unittest.cc
+build obj/webrtc/p2p/base/rtc_unittests.dtlstransportchannel_unittest.o: $
+    cxx ../../webrtc/p2p/base/dtlstransportchannel_unittest.cc
+build obj/webrtc/p2p/base/rtc_unittests.p2ptransportchannel_unittest.o: cxx $
+    ../../webrtc/p2p/base/p2ptransportchannel_unittest.cc
+build obj/webrtc/p2p/base/rtc_unittests.port_unittest.o: cxx $
+    ../../webrtc/p2p/base/port_unittest.cc
+build obj/webrtc/p2p/base/rtc_unittests.pseudotcp_unittest.o: cxx $
+    ../../webrtc/p2p/base/pseudotcp_unittest.cc
+build obj/webrtc/p2p/base/rtc_unittests.relayport_unittest.o: cxx $
+    ../../webrtc/p2p/base/relayport_unittest.cc
+build obj/webrtc/p2p/base/rtc_unittests.relayserver_unittest.o: cxx $
+    ../../webrtc/p2p/base/relayserver_unittest.cc
+build obj/webrtc/p2p/base/rtc_unittests.session_unittest.o: cxx $
+    ../../webrtc/p2p/base/session_unittest.cc
+build obj/webrtc/p2p/base/rtc_unittests.stun_unittest.o: cxx $
+    ../../webrtc/p2p/base/stun_unittest.cc
+build obj/webrtc/p2p/base/rtc_unittests.stunport_unittest.o: cxx $
+    ../../webrtc/p2p/base/stunport_unittest.cc
+build obj/webrtc/p2p/base/rtc_unittests.stunrequest_unittest.o: cxx $
+    ../../webrtc/p2p/base/stunrequest_unittest.cc
+build obj/webrtc/p2p/base/rtc_unittests.stunserver_unittest.o: cxx $
+    ../../webrtc/p2p/base/stunserver_unittest.cc
+build obj/webrtc/p2p/base/rtc_unittests.transport_unittest.o: cxx $
+    ../../webrtc/p2p/base/transport_unittest.cc
+build $
+    obj/webrtc/p2p/base/rtc_unittests.transportdescriptionfactory_unittest.o: $
+    cxx ../../webrtc/p2p/base/transportdescriptionfactory_unittest.cc
+build obj/webrtc/p2p/base/rtc_unittests.turnport_unittest.o: cxx $
+    ../../webrtc/p2p/base/turnport_unittest.cc
+build obj/webrtc/p2p/client/rtc_unittests.connectivitychecker_unittest.o: $
+    cxx ../../webrtc/p2p/client/connectivitychecker_unittest.cc
+build obj/webrtc/p2p/client/rtc_unittests.portallocator_unittest.o: cxx $
+    ../../webrtc/p2p/client/portallocator_unittest.cc
+build obj/webrtc/p2p/stunprober/rtc_unittests.stunprober_unittest.o: cxx $
+    ../../webrtc/p2p/stunprober/stunprober_unittest.cc
+build $
+    obj/webrtc/sound/rtc_unittests.automaticallychosensoundsystem_unittest.o: $
+    cxx ../../webrtc/sound/automaticallychosensoundsystem_unittest.cc
+build obj/webrtc/libjingle/xmllite/rtc_unittests.qname_unittest.o: cxx $
+    ../../webrtc/libjingle/xmllite/qname_unittest.cc
+build obj/webrtc/libjingle/xmllite/rtc_unittests.xmlbuilder_unittest.o: cxx $
+    ../../webrtc/libjingle/xmllite/xmlbuilder_unittest.cc
+build obj/webrtc/libjingle/xmllite/rtc_unittests.xmlelement_unittest.o: cxx $
+    ../../webrtc/libjingle/xmllite/xmlelement_unittest.cc
+build obj/webrtc/libjingle/xmllite/rtc_unittests.xmlnsstack_unittest.o: cxx $
+    ../../webrtc/libjingle/xmllite/xmlnsstack_unittest.cc
+build obj/webrtc/libjingle/xmllite/rtc_unittests.xmlparser_unittest.o: cxx $
+    ../../webrtc/libjingle/xmllite/xmlparser_unittest.cc
+build obj/webrtc/libjingle/xmllite/rtc_unittests.xmlprinter_unittest.o: cxx $
+    ../../webrtc/libjingle/xmllite/xmlprinter_unittest.cc
+build $
+    obj/webrtc/libjingle/xmpp/rtc_unittests.hangoutpubsubclient_unittest.o: $
+    cxx ../../webrtc/libjingle/xmpp/hangoutpubsubclient_unittest.cc
+build obj/webrtc/libjingle/xmpp/rtc_unittests.jid_unittest.o: cxx $
+    ../../webrtc/libjingle/xmpp/jid_unittest.cc
+build obj/webrtc/libjingle/xmpp/rtc_unittests.mucroomconfigtask_unittest.o: $
+    cxx ../../webrtc/libjingle/xmpp/mucroomconfigtask_unittest.cc
+build $
+    obj/webrtc/libjingle/xmpp/rtc_unittests.mucroomdiscoverytask_unittest.o: $
+    cxx ../../webrtc/libjingle/xmpp/mucroomdiscoverytask_unittest.cc
+build obj/webrtc/libjingle/xmpp/rtc_unittests.mucroomlookuptask_unittest.o: $
+    cxx ../../webrtc/libjingle/xmpp/mucroomlookuptask_unittest.cc
+build $
+    obj/webrtc/libjingle/xmpp/rtc_unittests.mucroomuniquehangoutidtask_unittest.o: $
+    cxx ../../webrtc/libjingle/xmpp/mucroomuniquehangoutidtask_unittest.cc
+build obj/webrtc/libjingle/xmpp/rtc_unittests.pingtask_unittest.o: cxx $
+    ../../webrtc/libjingle/xmpp/pingtask_unittest.cc
+build obj/webrtc/libjingle/xmpp/rtc_unittests.pubsubclient_unittest.o: cxx $
+    ../../webrtc/libjingle/xmpp/pubsubclient_unittest.cc
+build obj/webrtc/libjingle/xmpp/rtc_unittests.pubsubtasks_unittest.o: cxx $
+    ../../webrtc/libjingle/xmpp/pubsubtasks_unittest.cc
+build obj/webrtc/libjingle/xmpp/rtc_unittests.util_unittest.o: cxx $
+    ../../webrtc/libjingle/xmpp/util_unittest.cc
+build obj/webrtc/libjingle/xmpp/rtc_unittests.xmppengine_unittest.o: cxx $
+    ../../webrtc/libjingle/xmpp/xmppengine_unittest.cc
+build obj/webrtc/libjingle/xmpp/rtc_unittests.xmpplogintask_unittest.o: cxx $
+    ../../webrtc/libjingle/xmpp/xmpplogintask_unittest.cc
+build obj/webrtc/libjingle/xmpp/rtc_unittests.xmppstanzaparser_unittest.o: $
+    cxx ../../webrtc/libjingle/xmpp/xmppstanzaparser_unittest.cc
+
+ldflags = -Wl,-z,now -Wl,-z,relro -Wl,--fatal-warnings -Wl,-z,defs -pthread $
+    -Wl,-z,noexecstack -fPIC $
+    -B/home/allan/webrtc_co/src/third_party/binutils/Linux_x64/Release/bin $
+    -Wl,--disable-new-dtags -m32 -Wl,--no-as-needed
+libs =  -ldl -lrt -lXext -lX11 -lXcomposite -lXrender -lnss3 -lnssutil3 $
+    -lsmime3 -lplds4 -lplc4 -lnspr4 -lexpat
+build rtc_unittests: link $
+    obj/webrtc/base/rtc_unittests.asynchttprequest_unittest.o $
+    obj/webrtc/base/rtc_unittests.atomicops_unittest.o $
+    obj/webrtc/base/rtc_unittests.autodetectproxy_unittest.o $
+    obj/webrtc/base/rtc_unittests.bandwidthsmoother_unittest.o $
+    obj/webrtc/base/rtc_unittests.base64_unittest.o $
+    obj/webrtc/base/rtc_unittests.basictypes_unittest.o $
+    obj/webrtc/base/rtc_unittests.bind_unittest.o $
+    obj/webrtc/base/rtc_unittests.bitbuffer_unittest.o $
+    obj/webrtc/base/rtc_unittests.buffer_unittest.o $
+    obj/webrtc/base/rtc_unittests.bufferqueue_unittest.o $
+    obj/webrtc/base/rtc_unittests.bytebuffer_unittest.o $
+    obj/webrtc/base/rtc_unittests.byteorder_unittest.o $
+    obj/webrtc/base/rtc_unittests.callback_unittest.o $
+    obj/webrtc/base/rtc_unittests.cpumonitor_unittest.o $
+    obj/webrtc/base/rtc_unittests.crc32_unittest.o $
+    obj/webrtc/base/rtc_unittests.criticalsection_unittest.o $
+    obj/webrtc/base/rtc_unittests.event_tracer_unittest.o $
+    obj/webrtc/base/rtc_unittests.event_unittest.o $
+    obj/webrtc/base/rtc_unittests.exp_filter_unittest.o $
+    obj/webrtc/base/rtc_unittests.filerotatingstream_unittest.o $
+    obj/webrtc/base/rtc_unittests.fileutils_unittest.o $
+    obj/webrtc/base/rtc_unittests.helpers_unittest.o $
+    obj/webrtc/base/rtc_unittests.httpbase_unittest.o $
+    obj/webrtc/base/rtc_unittests.httpcommon_unittest.o $
+    obj/webrtc/base/rtc_unittests.httpserver_unittest.o $
+    obj/webrtc/base/rtc_unittests.ipaddress_unittest.o $
+    obj/webrtc/base/rtc_unittests.logging_unittest.o $
+    obj/webrtc/base/rtc_unittests.md5digest_unittest.o $
+    obj/webrtc/base/rtc_unittests.messagedigest_unittest.o $
+    obj/webrtc/base/rtc_unittests.messagequeue_unittest.o $
+    obj/webrtc/base/rtc_unittests.multipart_unittest.o $
+    obj/webrtc/base/rtc_unittests.nat_unittest.o $
+    obj/webrtc/base/rtc_unittests.network_unittest.o $
+    obj/webrtc/base/rtc_unittests.nullsocketserver_unittest.o $
+    obj/webrtc/base/rtc_unittests.optionsfile_unittest.o $
+    obj/webrtc/base/rtc_unittests.pathutils_unittest.o $
+    obj/webrtc/base/rtc_unittests.physicalsocketserver_unittest.o $
+    obj/webrtc/base/rtc_unittests.profiler_unittest.o $
+    obj/webrtc/base/rtc_unittests.proxy_unittest.o $
+    obj/webrtc/base/rtc_unittests.proxydetect_unittest.o $
+    obj/webrtc/base/rtc_unittests.ratelimiter_unittest.o $
+    obj/webrtc/base/rtc_unittests.ratetracker_unittest.o $
+    obj/webrtc/base/rtc_unittests.referencecountedsingletonfactory_unittest.o $
+    obj/webrtc/base/rtc_unittests.rollingaccumulator_unittest.o $
+    obj/webrtc/base/rtc_unittests.scopedptrcollection_unittest.o $
+    obj/webrtc/base/rtc_unittests.sha1digest_unittest.o $
+    obj/webrtc/base/rtc_unittests.sharedexclusivelock_unittest.o $
+    obj/webrtc/base/rtc_unittests.signalthread_unittest.o $
+    obj/webrtc/base/rtc_unittests.sigslot_unittest.o $
+    obj/webrtc/base/rtc_unittests.socket_unittest.o $
+    obj/webrtc/base/rtc_unittests.socketaddress_unittest.o $
+    obj/webrtc/base/rtc_unittests.stream_unittest.o $
+    obj/webrtc/base/rtc_unittests.stringencode_unittest.o $
+    obj/webrtc/base/rtc_unittests.stringutils_unittest.o $
+    obj/webrtc/base/rtc_unittests.task_unittest.o $
+    obj/webrtc/base/rtc_unittests.testclient_unittest.o $
+    obj/webrtc/base/rtc_unittests.thread_checker_unittest.o $
+    obj/webrtc/base/rtc_unittests.thread_unittest.o $
+    obj/webrtc/base/rtc_unittests.timeutils_unittest.o $
+    obj/webrtc/base/rtc_unittests.urlencode_unittest.o $
+    obj/webrtc/base/rtc_unittests.versionparsing_unittest.o $
+    obj/webrtc/base/rtc_unittests.virtualsocket_unittest.o $
+    obj/webrtc/base/rtc_unittests.latebindingsymboltable_unittest.o $
+    obj/webrtc/base/rtc_unittests.linuxfdwalk_unittest.o $
+    obj/webrtc/base/rtc_unittests.ssladapter_unittest.o $
+    obj/webrtc/base/rtc_unittests.sslidentity_unittest.o $
+    obj/webrtc/base/rtc_unittests.sslstreamadapter_unittest.o $
+    obj/webrtc/p2p/base/rtc_unittests.dtlstransportchannel_unittest.o $
+    obj/webrtc/p2p/base/rtc_unittests.p2ptransportchannel_unittest.o $
+    obj/webrtc/p2p/base/rtc_unittests.port_unittest.o $
+    obj/webrtc/p2p/base/rtc_unittests.pseudotcp_unittest.o $
+    obj/webrtc/p2p/base/rtc_unittests.relayport_unittest.o $
+    obj/webrtc/p2p/base/rtc_unittests.relayserver_unittest.o $
+    obj/webrtc/p2p/base/rtc_unittests.session_unittest.o $
+    obj/webrtc/p2p/base/rtc_unittests.stun_unittest.o $
+    obj/webrtc/p2p/base/rtc_unittests.stunport_unittest.o $
+    obj/webrtc/p2p/base/rtc_unittests.stunrequest_unittest.o $
+    obj/webrtc/p2p/base/rtc_unittests.stunserver_unittest.o $
+    obj/webrtc/p2p/base/rtc_unittests.transport_unittest.o $
+    obj/webrtc/p2p/base/rtc_unittests.transportdescriptionfactory_unittest.o $
+    obj/webrtc/p2p/base/rtc_unittests.turnport_unittest.o $
+    obj/webrtc/p2p/client/rtc_unittests.connectivitychecker_unittest.o $
+    obj/webrtc/p2p/client/rtc_unittests.portallocator_unittest.o $
+    obj/webrtc/p2p/stunprober/rtc_unittests.stunprober_unittest.o $
+    obj/webrtc/sound/rtc_unittests.automaticallychosensoundsystem_unittest.o $
+    obj/webrtc/libjingle/xmllite/rtc_unittests.qname_unittest.o $
+    obj/webrtc/libjingle/xmllite/rtc_unittests.xmlbuilder_unittest.o $
+    obj/webrtc/libjingle/xmllite/rtc_unittests.xmlelement_unittest.o $
+    obj/webrtc/libjingle/xmllite/rtc_unittests.xmlnsstack_unittest.o $
+    obj/webrtc/libjingle/xmllite/rtc_unittests.xmlparser_unittest.o $
+    obj/webrtc/libjingle/xmllite/rtc_unittests.xmlprinter_unittest.o $
+    obj/webrtc/libjingle/xmpp/rtc_unittests.hangoutpubsubclient_unittest.o $
+    obj/webrtc/libjingle/xmpp/rtc_unittests.jid_unittest.o $
+    obj/webrtc/libjingle/xmpp/rtc_unittests.mucroomconfigtask_unittest.o $
+    obj/webrtc/libjingle/xmpp/rtc_unittests.mucroomdiscoverytask_unittest.o $
+    obj/webrtc/libjingle/xmpp/rtc_unittests.mucroomlookuptask_unittest.o $
+    obj/webrtc/libjingle/xmpp/rtc_unittests.mucroomuniquehangoutidtask_unittest.o $
+    obj/webrtc/libjingle/xmpp/rtc_unittests.pingtask_unittest.o $
+    obj/webrtc/libjingle/xmpp/rtc_unittests.pubsubclient_unittest.o $
+    obj/webrtc/libjingle/xmpp/rtc_unittests.pubsubtasks_unittest.o $
+    obj/webrtc/libjingle/xmpp/rtc_unittests.util_unittest.o $
+    obj/webrtc/libjingle/xmpp/rtc_unittests.xmppengine_unittest.o $
+    obj/webrtc/libjingle/xmpp/rtc_unittests.xmpplogintask_unittest.o $
+    obj/webrtc/libjingle/xmpp/rtc_unittests.xmppstanzaparser_unittest.o $
+    obj/webrtc/base/librtc_base.a obj/webrtc/base/librtc_base_tests_utils.a $
+    obj/webrtc/libjingle/xmllite/librtc_xmllite.a $
+    obj/webrtc/libjingle/xmpp/librtc_xmpp.a obj/webrtc/p2p/librtc_p2p.a $
+    obj/webrtc/p2p/libstunprober.a obj/webrtc/sound/librtc_sound.a $
+    obj/chromium/src/testing/libgtest.a obj/chromium/src/testing/libgmock.a $
+    obj/webrtc/libwebrtc_common.a obj/webrtc/base/librtc_base_approved.a $
+    obj/chromium/src/third_party/jsoncpp/libjsoncpp.a $
+    obj/chromium/src/net/third_party/nss/libcrssl.a | $
+    obj/chromium/src/net/third_party/nss/libcrssl.a
+  ld = $ldxx

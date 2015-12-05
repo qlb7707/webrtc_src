@@ -1,0 +1,284 @@
+defines = -DV8_DEPRECATION_WARNINGS -DEXPAT_RELATIVE_PATH -DWEBRTC_POSIX $
+    -DWEBRTC_LINUX -DWEBRTC_INCLUDE_INTERNAL_AUDIO_DEVICE $
+    -D_FILE_OFFSET_BITS=64 -DCHROMIUM_BUILD -DCR_CLANG_REVISION=239765-1 $
+    -DUI_COMPOSITOR_IMAGE_TRANSPORT -DUSE_AURA=1 -DUSE_ASH=1 -DUSE_PANGO=1 $
+    -DUSE_CAIRO=1 -DUSE_DEFAULT_RENDER_THEME=1 -DUSE_LIBJPEG_TURBO=1 $
+    -DUSE_X11=1 -DUSE_CLIPBOARD_AURAX11=1 -DENABLE_ONE_CLICK_SIGNIN $
+    -DENABLE_PRE_SYNC_BACKUP -DENABLE_REMOTING=1 -DENABLE_WEBRTC=1 $
+    -DENABLE_MEDIA_ROUTER=1 -DENABLE_PEPPER_CDMS $
+    -DENABLE_CONFIGURATION_POLICY -DENABLE_NOTIFICATIONS -DENABLE_HIDPI=1 $
+    -DENABLE_TOPCHROME_MD=1 -DUSE_UDEV -DDONT_EMBED_BUILD_METADATA $
+    -DENABLE_TASK_MANAGER=1 -DENABLE_EXTENSIONS=1 -DENABLE_PLUGINS=1 $
+    -DENABLE_SESSION_SERVICE=1 -DENABLE_THEMES=1 -DENABLE_AUTOFILL_DIALOG=1 $
+    -DENABLE_BACKGROUND=1 -DENABLE_GOOGLE_NOW=1 -DCLD_VERSION=2 $
+    -DENABLE_PRINTING=1 -DENABLE_BASIC_PRINTING=1 -DENABLE_PRINT_PREVIEW=1 $
+    -DENABLE_SPELLCHECK=1 -DENABLE_CAPTIVE_PORTAL_DETECTION=1 $
+    -DENABLE_APP_LIST=1 -DENABLE_SETTINGS_APP=1 -DENABLE_SUPERVISED_USERS=1 $
+    -DENABLE_MDNS=1 -DENABLE_SERVICE_DISCOVERY=1 $
+    -DV8_USE_EXTERNAL_STARTUP_DATA -DFULL_SAFE_BROWSING -DSAFE_BROWSING_CSD $
+    -DSAFE_BROWSING_DB_LOCAL -DSAFE_BROWSING_SERVICE -DUSE_LIBPCI=1 $
+    -DUSE_GLIB=1 -DUSE_NSS_CERTS=1 -D__STDC_CONSTANT_MACROS $
+    -D__STDC_FORMAT_MACROS -DNDEBUG -DNVALGRIND $
+    -DDYNAMIC_ANNOTATIONS_ENABLED=0
+includes = -Igen -I../.. $
+    -I../../webrtc/modules/audio_coding/codecs/ilbc/interface $
+    -I../../webrtc -I../../webrtc/common_audio/resampler/include $
+    -I../../webrtc/common_audio/signal_processing/include $
+    -I../../webrtc/common_audio/vad/include
+cflags = -Wextra -Wno-unused-parameter -Wno-missing-field-initializers $
+    -Wno-strict-overflow -Wimplicit-fallthrough -Wthread-safety $
+    -fstack-protector --param=ssp-buffer-size=4 -Werror -pthread $
+    -fno-strict-aliasing -Wall -Wno-unused-parameter $
+    -Wno-missing-field-initializers -fvisibility=hidden -pipe -fPIC $
+    -Wno-reserved-user-defined-literal -momit-leaf-frame-pointer $
+    -mstack-alignment=16 -mstackrealign -fcolor-diagnostics $
+    -B/home/allan/webrtc_co/src/third_party/binutils/Linux_x64/Release/bin $
+    -Wheader-hygiene -Wno-char-subscripts $
+    -Wno-unneeded-internal-declaration -Wno-covered-switch-default $
+    -Wstring-conversion -Wno-c++11-narrowing -Wno-deprecated-register $
+    -Wno-inconsistent-missing-override -Wextra -Wno-unused-parameter $
+    -Wno-missing-field-initializers -Wno-strict-overflow $
+    -Wimplicit-fallthrough -Wthread-safety -Wextra -Wno-unused-parameter $
+    -Wno-missing-field-initializers -Wno-strict-overflow $
+    -Wimplicit-fallthrough -Wthread-safety -Wextra -Wno-unused-parameter $
+    -Wno-missing-field-initializers -Wno-strict-overflow $
+    -Wimplicit-fallthrough -Wthread-safety -Wextra -Wno-unused-parameter $
+    -Wno-missing-field-initializers -Wno-strict-overflow $
+    -Wimplicit-fallthrough -Wthread-safety -msse2 -mfpmath=sse -mmmx -m32 $
+    -O2 -fno-ident -fdata-sections -ffunction-sections -funwind-tables
+cflags_c = 
+cflags_cc = -Wnon-virtual-dtor -Woverloaded-virtual -fno-exceptions $
+    -fno-rtti -fno-threadsafe-statics -fvisibility-inlines-hidden $
+    -Wsign-compare -std=gnu++11 -Wnon-virtual-dtor -Woverloaded-virtual $
+    -Wnon-virtual-dtor -Woverloaded-virtual -Wnon-virtual-dtor $
+    -Woverloaded-virtual -Wnon-virtual-dtor -Woverloaded-virtual
+arflags = 
+
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.abs_quant.o: cc $
+    ../../webrtc/modules/audio_coding/codecs/ilbc/abs_quant.c
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.abs_quant_loop.o: cc $
+    ../../webrtc/modules/audio_coding/codecs/ilbc/abs_quant_loop.c
+build $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.audio_encoder_ilbc.o: $
+    cxx ../../webrtc/modules/audio_coding/codecs/ilbc/audio_encoder_ilbc.cc
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.augmented_cb_corr.o: $
+    cc ../../webrtc/modules/audio_coding/codecs/ilbc/augmented_cb_corr.c
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.bw_expand.o: cc $
+    ../../webrtc/modules/audio_coding/codecs/ilbc/bw_expand.c
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.cb_construct.o: cc $
+    ../../webrtc/modules/audio_coding/codecs/ilbc/cb_construct.c
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.cb_mem_energy.o: cc $
+    ../../webrtc/modules/audio_coding/codecs/ilbc/cb_mem_energy.c
+build $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.cb_mem_energy_augmentation.o: $
+    cc $
+    ../../webrtc/modules/audio_coding/codecs/ilbc/cb_mem_energy_augmentation.c
+build $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.cb_mem_energy_calc.o: $
+    cc ../../webrtc/modules/audio_coding/codecs/ilbc/cb_mem_energy_calc.c
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.cb_search.o: cc $
+    ../../webrtc/modules/audio_coding/codecs/ilbc/cb_search.c
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.cb_search_core.o: cc $
+    ../../webrtc/modules/audio_coding/codecs/ilbc/cb_search_core.c
+build $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.cb_update_best_index.o: $
+    cc ../../webrtc/modules/audio_coding/codecs/ilbc/cb_update_best_index.c
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.chebyshev.o: cc $
+    ../../webrtc/modules/audio_coding/codecs/ilbc/chebyshev.c
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.comp_corr.o: cc $
+    ../../webrtc/modules/audio_coding/codecs/ilbc/comp_corr.c
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.constants.o: cc $
+    ../../webrtc/modules/audio_coding/codecs/ilbc/constants.c
+build $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.create_augmented_vec.o: $
+    cc ../../webrtc/modules/audio_coding/codecs/ilbc/create_augmented_vec.c
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.decode.o: cc $
+    ../../webrtc/modules/audio_coding/codecs/ilbc/decode.c
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.decode_residual.o: $
+    cc ../../webrtc/modules/audio_coding/codecs/ilbc/decode_residual.c
+build $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.decoder_interpolate_lsf.o: $
+    cc ../../webrtc/modules/audio_coding/codecs/ilbc/decoder_interpolate_lsf.c
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.do_plc.o: cc $
+    ../../webrtc/modules/audio_coding/codecs/ilbc/do_plc.c
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.encode.o: cc $
+    ../../webrtc/modules/audio_coding/codecs/ilbc/encode.c
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.energy_inverse.o: cc $
+    ../../webrtc/modules/audio_coding/codecs/ilbc/energy_inverse.c
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.enh_upsample.o: cc $
+    ../../webrtc/modules/audio_coding/codecs/ilbc/enh_upsample.c
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.enhancer.o: cc $
+    ../../webrtc/modules/audio_coding/codecs/ilbc/enhancer.c
+build $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.enhancer_interface.o: $
+    cc ../../webrtc/modules/audio_coding/codecs/ilbc/enhancer_interface.c
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.filtered_cb_vecs.o: $
+    cc ../../webrtc/modules/audio_coding/codecs/ilbc/filtered_cb_vecs.c
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.frame_classify.o: cc $
+    ../../webrtc/modules/audio_coding/codecs/ilbc/frame_classify.c
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.gain_dequant.o: cc $
+    ../../webrtc/modules/audio_coding/codecs/ilbc/gain_dequant.c
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.gain_quant.o: cc $
+    ../../webrtc/modules/audio_coding/codecs/ilbc/gain_quant.c
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.get_cd_vec.o: cc $
+    ../../webrtc/modules/audio_coding/codecs/ilbc/get_cd_vec.c
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.get_lsp_poly.o: cc $
+    ../../webrtc/modules/audio_coding/codecs/ilbc/get_lsp_poly.c
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.get_sync_seq.o: cc $
+    ../../webrtc/modules/audio_coding/codecs/ilbc/get_sync_seq.c
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.hp_input.o: cc $
+    ../../webrtc/modules/audio_coding/codecs/ilbc/hp_input.c
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.hp_output.o: cc $
+    ../../webrtc/modules/audio_coding/codecs/ilbc/hp_output.c
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.ilbc.o: cc $
+    ../../webrtc/modules/audio_coding/codecs/ilbc/ilbc.c
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.index_conv_dec.o: cc $
+    ../../webrtc/modules/audio_coding/codecs/ilbc/index_conv_dec.c
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.index_conv_enc.o: cc $
+    ../../webrtc/modules/audio_coding/codecs/ilbc/index_conv_enc.c
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.init_decode.o: cc $
+    ../../webrtc/modules/audio_coding/codecs/ilbc/init_decode.c
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.init_encode.o: cc $
+    ../../webrtc/modules/audio_coding/codecs/ilbc/init_encode.c
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.interpolate.o: cc $
+    ../../webrtc/modules/audio_coding/codecs/ilbc/interpolate.c
+build $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.interpolate_samples.o: $
+    cc ../../webrtc/modules/audio_coding/codecs/ilbc/interpolate_samples.c
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.lpc_encode.o: cc $
+    ../../webrtc/modules/audio_coding/codecs/ilbc/lpc_encode.c
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.lsf_check.o: cc $
+    ../../webrtc/modules/audio_coding/codecs/ilbc/lsf_check.c
+build $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.lsf_interpolate_to_poly_dec.o: $
+    cc $
+    ../../webrtc/modules/audio_coding/codecs/ilbc/lsf_interpolate_to_poly_dec.c
+build $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.lsf_interpolate_to_poly_enc.o: $
+    cc $
+    ../../webrtc/modules/audio_coding/codecs/ilbc/lsf_interpolate_to_poly_enc.c
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.lsf_to_lsp.o: cc $
+    ../../webrtc/modules/audio_coding/codecs/ilbc/lsf_to_lsp.c
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.lsf_to_poly.o: cc $
+    ../../webrtc/modules/audio_coding/codecs/ilbc/lsf_to_poly.c
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.lsp_to_lsf.o: cc $
+    ../../webrtc/modules/audio_coding/codecs/ilbc/lsp_to_lsf.c
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.my_corr.o: cc $
+    ../../webrtc/modules/audio_coding/codecs/ilbc/my_corr.c
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.nearest_neighbor.o: $
+    cc ../../webrtc/modules/audio_coding/codecs/ilbc/nearest_neighbor.c
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.pack_bits.o: cc $
+    ../../webrtc/modules/audio_coding/codecs/ilbc/pack_bits.c
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.poly_to_lsf.o: cc $
+    ../../webrtc/modules/audio_coding/codecs/ilbc/poly_to_lsf.c
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.poly_to_lsp.o: cc $
+    ../../webrtc/modules/audio_coding/codecs/ilbc/poly_to_lsp.c
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.refiner.o: cc $
+    ../../webrtc/modules/audio_coding/codecs/ilbc/refiner.c
+build $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.simple_interpolate_lsf.o: $
+    cc ../../webrtc/modules/audio_coding/codecs/ilbc/simple_interpolate_lsf.c
+build $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.simple_lpc_analysis.o: $
+    cc ../../webrtc/modules/audio_coding/codecs/ilbc/simple_lpc_analysis.c
+build $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.simple_lsf_dequant.o: $
+    cc ../../webrtc/modules/audio_coding/codecs/ilbc/simple_lsf_dequant.c
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.simple_lsf_quant.o: $
+    cc ../../webrtc/modules/audio_coding/codecs/ilbc/simple_lsf_quant.c
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.smooth.o: cc $
+    ../../webrtc/modules/audio_coding/codecs/ilbc/smooth.c
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.smooth_out_data.o: $
+    cc ../../webrtc/modules/audio_coding/codecs/ilbc/smooth_out_data.c
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.sort_sq.o: cc $
+    ../../webrtc/modules/audio_coding/codecs/ilbc/sort_sq.c
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.split_vq.o: cc $
+    ../../webrtc/modules/audio_coding/codecs/ilbc/split_vq.c
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.state_construct.o: $
+    cc ../../webrtc/modules/audio_coding/codecs/ilbc/state_construct.c
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.state_search.o: cc $
+    ../../webrtc/modules/audio_coding/codecs/ilbc/state_search.c
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.swap_bytes.o: cc $
+    ../../webrtc/modules/audio_coding/codecs/ilbc/swap_bytes.c
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.unpack_bits.o: cc $
+    ../../webrtc/modules/audio_coding/codecs/ilbc/unpack_bits.c
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.vq3.o: cc $
+    ../../webrtc/modules/audio_coding/codecs/ilbc/vq3.c
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.vq4.o: cc $
+    ../../webrtc/modules/audio_coding/codecs/ilbc/vq4.c
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.window32_w32.o: cc $
+    ../../webrtc/modules/audio_coding/codecs/ilbc/window32_w32.c
+build obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.xcorr_coef.o: cc $
+    ../../webrtc/modules/audio_coding/codecs/ilbc/xcorr_coef.c
+
+build obj/webrtc/modules/libilbc.a: alink_thin $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.abs_quant.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.abs_quant_loop.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.audio_encoder_ilbc.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.augmented_cb_corr.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.bw_expand.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.cb_construct.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.cb_mem_energy.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.cb_mem_energy_augmentation.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.cb_mem_energy_calc.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.cb_search.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.cb_search_core.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.cb_update_best_index.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.chebyshev.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.comp_corr.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.constants.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.create_augmented_vec.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.decode.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.decode_residual.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.decoder_interpolate_lsf.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.do_plc.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.encode.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.energy_inverse.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.enh_upsample.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.enhancer.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.enhancer_interface.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.filtered_cb_vecs.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.frame_classify.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.gain_dequant.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.gain_quant.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.get_cd_vec.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.get_lsp_poly.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.get_sync_seq.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.hp_input.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.hp_output.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.ilbc.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.index_conv_dec.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.index_conv_enc.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.init_decode.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.init_encode.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.interpolate.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.interpolate_samples.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.lpc_encode.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.lsf_check.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.lsf_interpolate_to_poly_dec.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.lsf_interpolate_to_poly_enc.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.lsf_to_lsp.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.lsf_to_poly.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.lsp_to_lsf.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.my_corr.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.nearest_neighbor.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.pack_bits.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.poly_to_lsf.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.poly_to_lsp.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.refiner.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.simple_interpolate_lsf.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.simple_lpc_analysis.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.simple_lsf_dequant.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.simple_lsf_quant.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.smooth.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.smooth_out_data.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.sort_sq.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.split_vq.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.state_construct.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.state_search.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.swap_bytes.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.unpack_bits.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.vq3.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.vq4.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.window32_w32.o $
+    obj/webrtc/modules/audio_coding/codecs/ilbc/ilbc.xcorr_coef.o

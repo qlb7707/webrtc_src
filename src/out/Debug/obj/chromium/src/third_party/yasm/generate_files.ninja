@@ -1,0 +1,105 @@
+build $
+    obj/chromium/src/third_party/yasm/generate_files.actions_depends.stamp: $
+    stamp genperf genversion
+
+rule generate_files_target_generate_x86_insn_f7085ff534ae421394166f76d0c72507
+  command = cd ../../chromium/src/third_party/yasm; python $
+      source/patched-yasm/modules/arch/x86/gen_x86_insn.py $
+      ../../../../out/Debug/gen/third_party/yasm
+  description = ACTION Running $
+      source/patched-yasm/modules/arch/x86/gen_x86_insn.py
+  restat = 1
+
+build gen/third_party/yasm/x86insns.c $
+    gen/third_party/yasm/x86insn_gas.gperf $
+    gen/third_party/yasm/x86insn_nasm.gperf: $
+    generate_files_target_generate_x86_insn_f7085ff534ae421394166f76d0c72507 $
+    ../../chromium/src/third_party/yasm/source/patched-yasm/modules/arch/x86/gen_x86_insn.py $
+    || obj/chromium/src/third_party/yasm/generate_files.actions_depends.stamp
+
+rule generate_files_target_generate_version_f7085ff534ae421394166f76d0c72507
+  command = cd ../../chromium/src/third_party/yasm; $
+      ../../../../out/Debug/genversion $
+      ../../../../out/Debug/gen/third_party/yasm/version.mac
+  description = ACTION Generating yasm version file: $
+      gen/third_party/yasm/version.mac
+  restat = 1
+
+build gen/third_party/yasm/version.mac: $
+    generate_files_target_generate_version_f7085ff534ae421394166f76d0c72507 $
+    genversion || $
+    obj/chromium/src/third_party/yasm/generate_files.actions_depends.stamp
+
+rule generate_files_target_generate_gperf_f7085ff534ae421394166f76d0c72507
+  command = cd ../../chromium/src/third_party/yasm; $
+      ../../../../out/Debug/genperf "${source}" $
+      "../../../../out/Debug/gen/third_party/yasm/${root}.c"
+  description = RULE yasm genperf for ${source}
+  restat = 1
+
+build gen/third_party/yasm/x86cpu.c: $
+    generate_files_target_generate_gperf_f7085ff534ae421394166f76d0c72507 $
+    ../../chromium/src/third_party/yasm/source/patched-yasm/modules/arch/x86/x86cpu.gperf $
+    | genperf || $
+    obj/chromium/src/third_party/yasm/generate_files.actions_depends.stamp
+  source = source/patched-yasm/modules/arch/x86/x86cpu.gperf
+  root = x86cpu
+build gen/third_party/yasm/x86regtmod.c: $
+    generate_files_target_generate_gperf_f7085ff534ae421394166f76d0c72507 $
+    ../../chromium/src/third_party/yasm/source/patched-yasm/modules/arch/x86/x86regtmod.gperf $
+    | genperf || $
+    obj/chromium/src/third_party/yasm/generate_files.actions_depends.stamp
+  source = source/patched-yasm/modules/arch/x86/x86regtmod.gperf
+  root = x86regtmod
+build $
+    obj/chromium/src/third_party/yasm/generate_files.actions_rules_copies.stamp: $
+    stamp gen/third_party/yasm/x86insns.c $
+    gen/third_party/yasm/x86insn_gas.gperf $
+    gen/third_party/yasm/x86insn_nasm.gperf $
+    gen/third_party/yasm/version.mac gen/third_party/yasm/x86cpu.c $
+    gen/third_party/yasm/x86regtmod.c
+
+defines = -DV8_DEPRECATION_WARNINGS -D_FILE_OFFSET_BITS=64 -DCHROMIUM_BUILD $
+    -DCR_CLANG_REVISION=239765-1 -DUI_COMPOSITOR_IMAGE_TRANSPORT $
+    -DUSE_AURA=1 -DUSE_ASH=1 -DUSE_PANGO=1 -DUSE_CAIRO=1 $
+    -DUSE_DEFAULT_RENDER_THEME=1 -DUSE_LIBJPEG_TURBO=1 -DUSE_X11=1 $
+    -DUSE_CLIPBOARD_AURAX11=1 -DENABLE_ONE_CLICK_SIGNIN $
+    -DENABLE_PRE_SYNC_BACKUP -DENABLE_REMOTING=1 -DENABLE_WEBRTC=1 $
+    -DENABLE_MEDIA_ROUTER=1 -DENABLE_PEPPER_CDMS $
+    -DENABLE_CONFIGURATION_POLICY -DENABLE_NOTIFICATIONS -DENABLE_HIDPI=1 $
+    -DENABLE_TOPCHROME_MD=1 -DUSE_UDEV -DDONT_EMBED_BUILD_METADATA $
+    -DENABLE_TASK_MANAGER=1 -DENABLE_EXTENSIONS=1 -DENABLE_PLUGINS=1 $
+    -DENABLE_SESSION_SERVICE=1 -DENABLE_THEMES=1 -DENABLE_AUTOFILL_DIALOG=1 $
+    -DENABLE_BACKGROUND=1 -DENABLE_GOOGLE_NOW=1 -DCLD_VERSION=2 $
+    -DENABLE_PRINTING=1 -DENABLE_BASIC_PRINTING=1 -DENABLE_PRINT_PREVIEW=1 $
+    -DENABLE_SPELLCHECK=1 -DENABLE_CAPTIVE_PORTAL_DETECTION=1 $
+    -DENABLE_APP_LIST=1 -DENABLE_SETTINGS_APP=1 -DENABLE_SUPERVISED_USERS=1 $
+    -DENABLE_MDNS=1 -DENABLE_SERVICE_DISCOVERY=1 $
+    -DV8_USE_EXTERNAL_STARTUP_DATA -DFULL_SAFE_BROWSING -DSAFE_BROWSING_CSD $
+    -DSAFE_BROWSING_DB_LOCAL -DSAFE_BROWSING_SERVICE -DUSE_LIBPCI=1 $
+    -DUSE_GLIB=1 -DUSE_NSS_CERTS=1 -DDYNAMIC_ANNOTATIONS_ENABLED=1 $
+    -DWTF_USE_DYNAMIC_ANNOTATIONS=1 -D_DEBUG
+includes = -Igen
+cflags = -fstack-protector --param=ssp-buffer-size=4 -Werror -pthread $
+    -fno-strict-aliasing -Wno-unused-parameter $
+    -Wno-missing-field-initializers -fvisibility=hidden -pipe -fPIC $
+    -Wno-reserved-user-defined-literal -Xclang -load -Xclang $
+    /home/allan/webrtc_co/src/third_party/llvm-build/Release+Asserts/lib/libFindBadConstructs.so $
+    -Xclang -add-plugin -Xclang find-bad-constructs -Xclang $
+    -plugin-arg-find-bad-constructs -Xclang check-templates $
+    -momit-leaf-frame-pointer -mstack-alignment=16 -mstackrealign $
+    -fcolor-diagnostics $
+    -B/home/allan/webrtc_co/src/third_party/binutils/Linux_x64/Release/bin $
+    -Wheader-hygiene -Wno-char-subscripts $
+    -Wno-unneeded-internal-declaration -Wno-covered-switch-default $
+    -Wstring-conversion -Wno-c++11-narrowing -Wno-deprecated-register $
+    -Wno-inconsistent-missing-override -Wno-overloaded-virtual -Wno-format $
+    -Wno-unused-result -msse2 -mfpmath=sse -mmmx -m32 -O0 -g $
+    -funwind-tables -Wno-undefined-bool-conversion $
+    -Wno-tautological-undefined-compare
+cflags_c = 
+cflags_cc = -fno-exceptions -fno-rtti -fno-threadsafe-statics $
+    -fvisibility-inlines-hidden -std=gnu++11 -Wno-deprecated
+arflags = 
+
+

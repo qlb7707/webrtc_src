@@ -1,0 +1,59 @@
+rule $
+    libjingle_peerconnection_jar_target_create_jar_758f82060e065429b140537d783fe559
+  command = cd ../../talk; bash -ec "mkdir -p $
+      ../out/Release/obj/talk/libjingle_peerconnection_jar.gen && { $
+      build/build_jar.sh /usr/lib/jvm/java-7-openjdk-i386 $
+      \"../out/Release/libjingle_peerconnection.jar\"       $
+      ../out/Release/obj/talk/libjingle_peerconnection_jar.gen/build_jar.tmp $
+            app/webrtc/java/src $
+      app/webrtc/java/src/org/webrtc/AudioSource.java $
+      app/webrtc/java/src/org/webrtc/AudioTrack.java $
+      app/webrtc/java/src/org/webrtc/DataChannel.java $
+      app/webrtc/java/src/org/webrtc/IceCandidate.java $
+      app/webrtc/java/src/org/webrtc/Logging.java $
+      app/webrtc/java/src/org/webrtc/MediaConstraints.java $
+      app/webrtc/java/src/org/webrtc/MediaSource.java $
+      app/webrtc/java/src/org/webrtc/MediaStream.java $
+      app/webrtc/java/src/org/webrtc/MediaStreamTrack.java $
+      app/webrtc/java/src/org/webrtc/PeerConnectionFactory.java $
+      app/webrtc/java/src/org/webrtc/PeerConnection.java $
+      app/webrtc/java/src/org/webrtc/SdpObserver.java $
+      app/webrtc/java/src/org/webrtc/StatsObserver.java $
+      app/webrtc/java/src/org/webrtc/StatsReport.java $
+      app/webrtc/java/src/org/webrtc/SessionDescription.java $
+      app/webrtc/java/src/org/webrtc/VideoCapturer.java $
+      app/webrtc/java/src/org/webrtc/VideoRenderer.java $
+      app/webrtc/java/src/org/webrtc/VideoSource.java $
+      app/webrtc/java/src/org/webrtc/VideoTrack.java       > $
+      ../out/Release/obj/talk/libjingle_peerconnection_jar.gen/build_jar.log $
+      2>&1 ||   { cat $
+      ../out/Release/obj/talk/libjingle_peerconnection_jar.gen/build_jar.log $
+      ; exit 1; } }"
+  description = ACTION libjingle_peerconnection_jar: $
+      create_jar_758f82060e065429b140537d783fe559
+  restat = 1
+
+build libjingle_peerconnection.jar: $
+    libjingle_peerconnection_jar_target_create_jar_758f82060e065429b140537d783fe559 $
+    ../../talk/build/build_jar.sh $
+    ../../talk/app/webrtc/java/src/org/webrtc/AudioSource.java $
+    ../../talk/app/webrtc/java/src/org/webrtc/AudioTrack.java $
+    ../../talk/app/webrtc/java/src/org/webrtc/DataChannel.java $
+    ../../talk/app/webrtc/java/src/org/webrtc/IceCandidate.java $
+    ../../talk/app/webrtc/java/src/org/webrtc/Logging.java $
+    ../../talk/app/webrtc/java/src/org/webrtc/MediaConstraints.java $
+    ../../talk/app/webrtc/java/src/org/webrtc/MediaSource.java $
+    ../../talk/app/webrtc/java/src/org/webrtc/MediaStream.java $
+    ../../talk/app/webrtc/java/src/org/webrtc/MediaStreamTrack.java $
+    ../../talk/app/webrtc/java/src/org/webrtc/PeerConnectionFactory.java $
+    ../../talk/app/webrtc/java/src/org/webrtc/PeerConnection.java $
+    ../../talk/app/webrtc/java/src/org/webrtc/SdpObserver.java $
+    ../../talk/app/webrtc/java/src/org/webrtc/StatsObserver.java $
+    ../../talk/app/webrtc/java/src/org/webrtc/StatsReport.java $
+    ../../talk/app/webrtc/java/src/org/webrtc/SessionDescription.java $
+    ../../talk/app/webrtc/java/src/org/webrtc/VideoCapturer.java $
+    ../../talk/app/webrtc/java/src/org/webrtc/VideoRenderer.java $
+    ../../talk/app/webrtc/java/src/org/webrtc/VideoSource.java $
+    ../../talk/app/webrtc/java/src/org/webrtc/VideoTrack.java || $
+    lib/libjingle_peerconnection_so.so.TOC
+

@@ -1,0 +1,2 @@
+build icudtl.dat: copy $
+    ../../chromium/src/third_party/icu/source/data/in/icudtl.dat

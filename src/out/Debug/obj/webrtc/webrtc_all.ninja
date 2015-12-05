@@ -1,0 +1,137 @@
+build obj/webrtc/webrtc_all.actions_depends.stamp: stamp $
+    obj/webrtc/base/librtc_base_approved.a obj/webrtc/base/librtc_base.a $
+    obj/webrtc/sound/librtc_sound.a obj/webrtc/libwebrtc_common.a $
+    obj/webrtc/common_audio/libcommon_audio.a $
+    obj/webrtc/common_audio/libcommon_audio_sse2.a common_audio_unittests $
+    common_audio_unittests.isolated $
+    obj/webrtc/common_video/libcommon_video.a $
+    obj/webrtc/modules/libaudio_decoder_interface.a $
+    obj/webrtc/modules/libaudio_encoder_interface.a $
+    obj/webrtc/modules/libcng.a obj/webrtc/modules/libg711.a $
+    obj/webrtc/modules/libg722.a obj/webrtc/modules/libilbc.a $
+    obj/webrtc/modules/libisac.a obj/webrtc/modules/libisac_fix.a $
+    obj/webrtc/modules/libpcm16b.a obj/webrtc/modules/libred.a $
+    obj/webrtc/modules/libaudio_coding_module.a $
+    obj/webrtc/modules/libneteq.a $
+    obj/webrtc/modules/libaudio_conference_mixer.a $
+    obj/webrtc/modules/libaudio_device.a $
+    obj/webrtc/modules/libaudio_processing.a $
+    obj/webrtc/modules/libbitrate_controller.a $
+    obj/webrtc/modules/libdesktop_capture.a $
+    obj/webrtc/modules/libmedia_file.a obj/webrtc/modules/libpaced_sender.a $
+    obj/webrtc/modules/libremote_bitrate_estimator.a $
+    obj/webrtc/modules/librtp_rtcp.a obj/webrtc/modules/libwebrtc_utility.a $
+    obj/webrtc/modules/libwebrtc_h264.a obj/webrtc/modules/libwebrtc_i420.a $
+    obj/webrtc/modules/libwebrtc_video_coding.a $
+    obj/webrtc/modules/libvideo_capture_module.a $
+    obj/webrtc/modules/libvideo_capture.a $
+    obj/webrtc/modules/libvideo_processing.a $
+    obj/webrtc/modules/libvideo_render_module.a $
+    obj/webrtc/modules/libvideo_render.a modules_unittests modules_tests $
+    audio_codec_speed_tests isac_test isac_api_test $
+    isac_switch_samprate_test isac_fix_test $
+    obj/webrtc/modules/libaudioproc_test_utils.a transient_suppression_test $
+    click_annotate nonlinear_beamformer_test intelligibility_proc $
+    test_packet_masks_metrics rtp_player modules_tests.isolated $
+    modules_unittests.isolated audio_codec_speed_tests.isolated $
+    obj/webrtc/modules/libaudioproc_unittest_proto.a $
+    obj/webrtc/modules/libaudioproc_protobuf_utils.a audioproc audioproc_f $
+    unpack_aecdump obj/webrtc/modules/libvideo_codecs_test_framework.a $
+    video_quality_measurement obj/webrtc/modules/libwebrtc_opus.a $
+    webrtc_opus_fec_test g711_test g722_test ilbc_test $
+    obj/webrtc/modules/libacm_receive_test.a $
+    obj/webrtc/modules/libacm_send_test.a delay_test $
+    insert_packet_with_timing audio_decoder_unittests $
+    obj/webrtc/modules/libneteq_unittest_tools.a neteq_rtpplay RTPencode $
+    RTPjitter rtp_analyze RTPchange RTPtimeshift rtpcat rtp_to_text $
+    audio_classifier_test obj/webrtc/modules/libneteq_test_support.a $
+    neteq_speed_test neteq_opus_quality_test neteq_isac_quality_test $
+    neteq_pcmu_quality_test neteq_ilbc_quality_test $
+    obj/webrtc/modules/libneteq_test_tools.a $
+    audio_decoder_unittests.isolated audio_device_tests $
+    audio_device_test_func audio_device_tests.isolated $
+    obj/webrtc/modules/libaudioproc_debug_proto.a $
+    obj/webrtc/modules/libaudio_processing_sse2.a $
+    obj/webrtc/modules/libdesktop_capture_differ_sse2.a $
+    obj/webrtc/modules/libbwe_simulator.a $
+    obj/webrtc/modules/libbwe_tools_util.a bwe_rtp_to_text bwe_rtp_play $
+    obj/webrtc/modules/libvideo_capture_module_internal_impl.a $
+    video_capture_tests video_capture_tests.isolated $
+    obj/webrtc/modules/libvideo_processing_sse2.a $
+    obj/webrtc/modules/libvideo_render_module_internal_impl.a $
+    video_render_tests video_render_tests.isolated $
+    obj/webrtc/p2p/librtc_p2p.a obj/webrtc/p2p/libstunprober.a stun_prober $
+    obj/webrtc/system_wrappers/libsystem_wrappers.a $
+    obj/webrtc/system_wrappers/libfield_trial_default.a $
+    obj/webrtc/system_wrappers/libmetrics_default.a $
+    obj/webrtc/tools/libvideo_quality_analysis.a frame_analyzer $
+    psnr_ssim_analyzer rgba_to_i420_converter $
+    obj/webrtc/tools/libframe_editing_lib.a frame_editor $
+    force_mic_volume_max obj/webrtc/tools/libagc_manager.a $
+    obj/webrtc/tools/libagc_test_utils.a agc_harness agc_proc $
+    activity_metric audio_e2e_harness tools_unittests $
+    tools_unittests.isolated obj/webrtc/voice_engine/libvoice_engine.a $
+    voice_engine_unittests voe_auto_test voe_cmd_test $
+    voice_engine_unittests.isolated voe_auto_test.isolated $
+    obj/webrtc/modules/video_coding/codecs/vp8/libwebrtc_vp8.a vp8_coder $
+    obj/webrtc/modules/video_coding/codecs/vp9/libwebrtc_vp9.a $
+    obj/webrtc/libwebrtc.a common_video_unittests $
+    common_video_unittests.isolated rtc_unittests system_wrappers_unittests $
+    system_wrappers_unittests.isolated obj/webrtc/test/libmetrics.a $
+    obj/webrtc/test/libchannel_transport.a $
+    obj/webrtc/test/libframe_generator.a $
+    obj/webrtc/test/librtp_test_utils.a obj/webrtc/test/libfield_trial.a $
+    obj/webrtc/test/libhistogram.a obj/webrtc/test/libtest_main.a $
+    obj/webrtc/test/libtest_support.a $
+    obj/webrtc/test/libtest_support_main.a test_support_unittests $
+    test_support_unittests.isolated webrtc_test_common_unittests $
+    video_engine_core_unittests obj/webrtc/webrtc_tests.actions_depends.stamp
+
+build obj/webrtc/webrtc_all.compile_depends.stamp: stamp $
+    common_audio_unittests.isolated $
+    obj/webrtc/modules/audioproc_debug_proto.actions_rules_copies.stamp $
+    obj/webrtc/modules/modules_unittests.compile_depends.stamp $
+    obj/webrtc/modules/modules_tests.compile_depends.stamp $
+    obj/webrtc/modules/audio_codec_speed_tests.compile_depends.stamp $
+    obj/webrtc/modules/transient_suppression_test.compile_depends.stamp $
+    obj/webrtc/modules/click_annotate.compile_depends.stamp $
+    obj/webrtc/modules/nonlinear_beamformer_test.compile_depends.stamp $
+    obj/webrtc/modules/intelligibility_proc.compile_depends.stamp $
+    obj/webrtc/modules/rtp_player.compile_depends.stamp $
+    modules_tests.isolated modules_unittests.isolated $
+    audio_codec_speed_tests.isolated $
+    obj/webrtc/modules/audioproc_unittest_proto.actions_rules_copies.stamp $
+    obj/webrtc/modules/audioproc_debug_proto.actions_rules_copies.stamp $
+    obj/webrtc/modules/audioproc.compile_depends.stamp $
+    obj/webrtc/modules/audioproc_f.compile_depends.stamp $
+    obj/webrtc/modules/unpack_aecdump.compile_depends.stamp $
+    obj/webrtc/modules/video_quality_measurement.compile_depends.stamp $
+    audio_decoder_unittests.isolated audio_device_tests.isolated $
+    obj/webrtc/modules/audioproc_debug_proto.actions_rules_copies.stamp $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.actions_rules_copies.stamp $
+    video_capture_tests.isolated $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.actions_rules_copies.stamp $
+    video_render_tests.isolated $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.actions_rules_copies.stamp $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.actions_rules_copies.stamp $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.actions_rules_copies.stamp $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.actions_rules_copies.stamp $
+    obj/webrtc/tools/force_mic_volume_max.compile_depends.stamp $
+    obj/webrtc/tools/agc_harness.compile_depends.stamp $
+    obj/webrtc/tools/agc_proc.compile_depends.stamp $
+    obj/webrtc/tools/activity_metric.compile_depends.stamp $
+    obj/webrtc/tools/audio_e2e_harness.compile_depends.stamp $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.actions_rules_copies.stamp $
+    tools_unittests.isolated $
+    obj/webrtc/voice_engine/voice_engine_unittests.compile_depends.stamp $
+    obj/webrtc/voice_engine/voe_auto_test.compile_depends.stamp $
+    obj/webrtc/voice_engine/voe_cmd_test.compile_depends.stamp $
+    voice_engine_unittests.isolated voe_auto_test.isolated $
+    obj/webrtc/modules/video_coding/codecs/vp8/vp8_coder.compile_depends.stamp $
+    obj/chromium/src/third_party/libjpeg_turbo/libjpeg.actions_rules_copies.stamp $
+    common_video_unittests.isolated system_wrappers_unittests.isolated $
+    test_support_unittests.isolated $
+    obj/webrtc/test/webrtc_test_common_unittests.compile_depends.stamp $
+    obj/webrtc/video_engine/video_engine_core_unittests.compile_depends.stamp $
+    obj/webrtc/webrtc_tests.compile_depends.stamp
+
